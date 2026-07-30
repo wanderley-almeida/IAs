@@ -66,7 +66,7 @@ function CardLink({ href, dark }: { href: string; dark?: boolean }) {
 function IconBadge({ icon, dark }: { icon: IconName; dark?: boolean }) {
   return (
     <span
-      className={`w-fit rounded-2xl p-3.5 ${
+      className={`inline-flex w-fit rounded-2xl p-3.5 ${
         dark ? "glass text-gold-300" : "bg-action/10 text-link"
       }`}
     >

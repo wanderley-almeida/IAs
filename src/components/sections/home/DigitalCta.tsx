@@ -59,7 +59,7 @@ export function DigitalCta() {
                 style={{ "--reveal-delay": `${i * 100}ms` } as React.CSSProperties}
                 className="glass group flex flex-col rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/50 hover:bg-white/[0.09]"
               >
-                <span className="w-fit rounded-2xl bg-gold-400/15 p-3 text-gold-300">
+                <span className="inline-flex w-fit rounded-2xl bg-gold-400/15 p-3 text-gold-300">
                   <Icon name={channel.icon} className="h-6 w-6" />
                 </span>
                 <h3 className="mt-5 text-lg font-semibold">{channel.title}</h3>

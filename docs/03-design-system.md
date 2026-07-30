@@ -1,7 +1,11 @@
 # Fase 3 — Design System
 
 > **Adendo v2 (jul/2026):** após feedback do cliente e foto da fachada, o
-> design system evoluiu: display passou de Lora para **Fraunces**; entrou o
+> design system evoluiu. A troca do display por Fraunces foi revertida:
+> **Lora** permanece como serifada institucional, por leitura mais sóbria em
+> títulos grandes. A escala foi recalibrada para baixo (hero 3.25rem,
+> títulos de seção 2.125rem, números de destaque 2.25rem), evitando peso
+> visual excessivo. Entrou o
 > **azul da fachada `#2E6FB5`** como cor de ação (botões/links/brilhos);
 > superfícies escuras ganharam **aurora + grain + dotgrid** e vidro
 > (glassmorphism); cards em bento com filete dourado; botões em pill;

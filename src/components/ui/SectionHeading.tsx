@@ -46,7 +46,7 @@ export function SectionHeading({
       )}
       <Heading
         className={cn(
-          "font-display text-[2rem] leading-[1.15] font-medium tracking-[-0.01em] md:text-[2.6rem]",
+          "font-display text-[1.75rem] leading-[1.2] font-medium tracking-[-0.005em] md:text-[2.125rem]",
           dark ? "text-white" : "text-heading",
         )}
       >

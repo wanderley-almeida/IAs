@@ -31,7 +31,7 @@ export function QuickAccess() {
                     href={getServicePath(service)}
                     className="group flex h-full flex-col gap-3 rounded-2xl border border-transparent bg-surface-1 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-gold-400/40 hover:bg-surface-0 hover:shadow-md"
                   >
-                    <span className="w-fit rounded-xl bg-action/10 p-2 text-link transition-colors group-hover:bg-action group-hover:text-white">
+                    <span className="inline-flex w-fit rounded-xl bg-action/10 p-2 text-link transition-colors group-hover:bg-action group-hover:text-white">
                       <Icon
                         name={serviceIcons[service.slug] ?? "document"}
                         className="h-5 w-5"
