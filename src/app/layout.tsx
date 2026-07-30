@@ -3,6 +3,7 @@ import { Inter, Fraunces } from "next/font/google";
 import { site } from "@/content/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { VLibrasWidget } from "@/components/layout/VLibrasWidget";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { organizationJsonLd } from "@/lib/jsonld";
@@ -76,6 +77,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <VLibrasWidget />
       </body>
     </html>
   );

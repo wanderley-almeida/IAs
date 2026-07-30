@@ -1,21 +1,28 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Icon } from "@/components/ui/Icon";
+import { Icon, type IconName } from "@/components/ui/Icon";
 import { cn } from "@/lib/utils";
-
-declare global {
-  interface Window {
-    VLibras?: { Widget: new (url: string) => unknown };
-  }
-}
 
 const FONT_STEPS = [0.875, 1, 1.125, 1.25];
 
-function applyTheme(theme: "light" | "dark") {
-  document.documentElement.dataset.theme = theme;
+type ThemeMode = "light" | "dark" | "system";
+
+function systemTheme(): "light" | "dark" {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function applyMode(mode: ThemeMode) {
   try {
-    localStorage.setItem("theme", theme);
+    if (mode === "system") {
+      localStorage.removeItem("theme");
+      document.documentElement.dataset.theme = systemTheme();
+    } else {
+      localStorage.setItem("theme", mode);
+      document.documentElement.dataset.theme = mode;
+    }
   } catch {}
 }
 
@@ -26,39 +33,25 @@ function applyFontScale(scale: number) {
   } catch {}
 }
 
-/** Carrega o VLibras (tradutor oficial de Libras do governo) sob demanda. */
-function enableVLibras() {
-  if (document.querySelector("[data-vlibras]")) return;
-  const wrap = document.createElement("div");
-  wrap.setAttribute("vw", "");
-  wrap.setAttribute("data-vlibras", "");
-  wrap.className = "enabled";
-  wrap.innerHTML =
-    '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
-  document.body.appendChild(wrap);
-  const script = document.createElement("script");
-  script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
-  script.onload = () => {
-    if (window.VLibras) new window.VLibras.Widget("https://vlibras.gov.br/app");
-  };
-  document.body.appendChild(script);
-}
-
 /**
- * Menu de acessibilidade: tema claro/escuro, tamanho do texto e VLibras.
+ * Menu de acessibilidade: tema (claro/escuro/sistema, padrão sistema),
+ * tamanho do texto e atalho para o tradutor de Libras (VLibras).
  * Preferências persistem em localStorage e são aplicadas antes do primeiro
  * paint pelo script inline do layout.
  */
 export function AccessibilityMenu() {
   const [open, setOpen] = useState(false);
-  // Estado inicial lido do que o script inline do layout já aplicou ao <html>
-  // (o popover só renderiza após interação, então não há divergência de SSR).
-  const [theme, setTheme] = useState<"light" | "dark">(() =>
-    typeof document !== "undefined" &&
-    document.documentElement.dataset.theme === "dark"
-      ? "dark"
-      : "light",
-  );
+  // Estado inicial lido do localStorage (o popover só renderiza após
+  // interação, então não há divergência de SSR).
+  const [mode, setMode] = useState<ThemeMode>(() => {
+    if (typeof window === "undefined") return "system";
+    try {
+      const stored = localStorage.getItem("theme");
+      return stored === "light" || stored === "dark" ? stored : "system";
+    } catch {
+      return "system";
+    }
+  });
   const [fontScale, setFontScale] = useState(() => {
     if (typeof window === "undefined") return 1;
     try {
@@ -68,8 +61,20 @@ export function AccessibilityMenu() {
       return 1;
     }
   });
-  const [librasOn, setLibrasOn] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+
+  // No modo Sistema, acompanha mudanças do tema do aparelho em tempo real.
+  useEffect(() => {
+    if (mode !== "system") return;
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => {
+      document.documentElement.dataset.theme = media.matches
+        ? "dark"
+        : "light";
+    };
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, [mode]);
 
   useEffect(() => {
     if (!open) return;
@@ -87,9 +92,9 @@ export function AccessibilityMenu() {
     };
   }, [open]);
 
-  function toggleTheme(next: "light" | "dark") {
-    setTheme(next);
-    applyTheme(next);
+  function selectMode(next: ThemeMode) {
+    setMode(next);
+    applyMode(next);
   }
 
   function stepFont(direction: 1 | -1) {
@@ -100,9 +105,29 @@ export function AccessibilityMenu() {
     applyFontScale(next);
   }
 
+  function openLibras() {
+    setOpen(false);
+    const accessButton =
+      document.querySelector<HTMLElement>("[vw-access-button]");
+    if (accessButton) {
+      accessButton.click();
+    } else {
+      // Script ainda carregando (estratégia lazyOnload): orienta o usuário.
+      window.alert(
+        "O tradutor de Libras está carregando. Aguarde alguns segundos e use o botão azul na lateral direita da tela.",
+      );
+    }
+  }
+
+  const themeOptions: { value: ThemeMode; label: string; icon: IconName }[] = [
+    { value: "light", label: "Claro", icon: "sun" },
+    { value: "dark", label: "Escuro", icon: "moon" },
+    { value: "system", label: "Sistema", icon: "monitor" },
+  ];
+
   const optionClasses = (active: boolean) =>
     cn(
-      "flex flex-1 items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition-colors",
+      "flex flex-1 items-center justify-center gap-1.5 rounded-lg border px-2 py-2 text-sm font-medium transition-colors",
       active
         ? "border-action bg-action text-white"
         : "border-line text-ink-700 hover:border-action hover:text-link",
@@ -124,30 +149,24 @@ export function AccessibilityMenu() {
       {open && (
         <div
           id="menu-acessibilidade"
-          className="absolute right-0 z-50 mt-2 w-72 rounded-2xl border border-line bg-surface-0 p-4 shadow-xl"
+          className="absolute right-0 z-50 mt-2 w-80 rounded-2xl border border-line bg-surface-0 p-4 shadow-xl"
         >
           <p className="text-xs font-semibold tracking-wider text-ink-500 uppercase">
             Tema
           </p>
           <div className="mt-2 flex gap-2">
-            <button
-              type="button"
-              onClick={() => toggleTheme("light")}
-              aria-pressed={theme === "light"}
-              className={optionClasses(theme === "light")}
-            >
-              <Icon name="sun" className="h-4 w-4" />
-              Claro
-            </button>
-            <button
-              type="button"
-              onClick={() => toggleTheme("dark")}
-              aria-pressed={theme === "dark"}
-              className={optionClasses(theme === "dark")}
-            >
-              <Icon name="moon" className="h-4 w-4" />
-              Escuro
-            </button>
+            {themeOptions.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => selectMode(option.value)}
+                aria-pressed={mode === option.value}
+                className={optionClasses(mode === option.value)}
+              >
+                <Icon name={option.icon} className="h-4 w-4" />
+                {option.label}
+              </button>
+            ))}
           </div>
 
           <p className="mt-4 text-xs font-semibold tracking-wider text-ink-500 uppercase">
@@ -185,16 +204,15 @@ export function AccessibilityMenu() {
           </p>
           <button
             type="button"
-            onClick={() => {
-              enableVLibras();
-              setLibrasOn(true);
-              setOpen(false);
-            }}
-            disabled={librasOn}
-            className="mt-2 w-full rounded-lg border border-line px-3 py-2 text-sm font-medium text-ink-700 transition-colors hover:border-action hover:text-link disabled:opacity-50"
+            onClick={openLibras}
+            className="mt-2 w-full rounded-lg border border-line px-3 py-2 text-sm font-medium text-ink-700 transition-colors hover:border-action hover:text-link"
           >
-            {librasOn ? "VLibras ativado" : "Ativar tradução em Libras (VLibras)"}
+            Abrir tradutor de Libras (VLibras)
           </button>
+          <p className="mt-2 text-xs leading-relaxed text-ink-500">
+            O tradutor também fica disponível no botão azul da lateral direita
+            da tela.
+          </p>
         </div>
       )}
     </div>

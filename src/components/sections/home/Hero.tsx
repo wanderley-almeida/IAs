@@ -39,11 +39,10 @@ export function Hero() {
           <h1
             data-reveal
             style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
-            className="font-display text-[2.75rem] leading-[1.06] font-medium tracking-[-0.01em] md:text-[4.25rem]"
+            className="font-display text-[2.75rem] leading-[1.08] font-medium tracking-[-0.01em] md:text-[4rem]"
           >
-            Segurança jurídica com
-            <br />
-            <span className="text-gold-sheen italic">atendimento humano</span>
+            Segurança jurídica com atendimento{" "}
+            <span className="text-gold-400">próximo e humano</span>
           </h1>
 
           <p
@@ -51,9 +50,9 @@ export function Hero() {
             style={{ "--reveal-delay": "180ms" } as React.CSSProperties}
             className="mt-7 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl"
           >
-            Escrituras, procurações, reconhecimento de firma e protesto de
-            títulos, com a fé pública de quem serve a região há mais de um
-            século.
+            Escrituras, procurações, reconhecimento de firma, protesto de
+            títulos e muito mais, com a fé pública de quem serve a região há
+            mais de um século.
           </p>
 
           <div
