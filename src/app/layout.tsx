@@ -3,7 +3,6 @@ import { Inter, Fraunces } from "next/font/google";
 import { site } from "@/content/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { VLibrasWidget } from "@/components/layout/VLibrasWidget";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { organizationJsonLd } from "@/lib/jsonld";
@@ -44,10 +43,14 @@ export const viewport: Viewport = {
 };
 
 /**
- * Aplica o tema (claro/escuro) e o tamanho de fonte salvos ANTES do primeiro
- * paint, evitando flash. Sem preferência salva, segue o sistema do usuário.
+ * Aplica o tema e o tamanho de fonte salvos ANTES do primeiro paint,
+ * evitando flash. Sem preferência salva, segue o sistema do usuário.
+ *
+ * A checagem de THEME_PREF_VERSION descarta uma única vez as preferências
+ * gravadas pela versão anterior do menu, que não oferecia a opção Sistema
+ * e podia deixar "Claro" fixado sem escolha consciente do usuário.
  */
-const themeInitScript = `(function(){try{var d=document.documentElement;var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}d.dataset.theme=t;var f=parseFloat(localStorage.getItem("fontScale"));if(f>=0.875&&f<=1.25){d.style.fontSize=(f*100)+"%"}}catch(e){}})()`;
+const themeInitScript = `(function(){try{var d=document.documentElement;if(localStorage.getItem("themePrefVersion")!=="2"){localStorage.removeItem("theme");localStorage.setItem("themePrefVersion","2")}var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}d.dataset.theme=t;var f=parseFloat(localStorage.getItem("fontScale"));if(f>=0.875&&f<=1.25){d.style.fontSize=(f*100)+"%"}}catch(e){}})()`;
 
 export default function RootLayout({
   children,
@@ -77,7 +80,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <VLibrasWidget />
       </body>
     </html>
   );

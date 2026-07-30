@@ -34,10 +34,9 @@ function applyFontScale(scale: number) {
 }
 
 /**
- * Menu de acessibilidade: tema (claro/escuro/sistema, padrão sistema),
- * tamanho do texto e atalho para o tradutor de Libras (VLibras).
- * Preferências persistem em localStorage e são aplicadas antes do primeiro
- * paint pelo script inline do layout.
+ * Menu de acessibilidade: tema (claro/escuro/sistema, padrão sistema) e
+ * tamanho do texto. Preferências persistem em localStorage e são aplicadas
+ * antes do primeiro paint pelo script inline do layout.
  */
 export function AccessibilityMenu() {
   const [open, setOpen] = useState(false);
@@ -105,20 +104,6 @@ export function AccessibilityMenu() {
     applyFontScale(next);
   }
 
-  function openLibras() {
-    setOpen(false);
-    const accessButton =
-      document.querySelector<HTMLElement>("[vw-access-button]");
-    if (accessButton) {
-      accessButton.click();
-    } else {
-      // Script ainda carregando (estratégia lazyOnload): orienta o usuário.
-      window.alert(
-        "O tradutor de Libras está carregando. Aguarde alguns segundos e use o botão azul na lateral direita da tela.",
-      );
-    }
-  }
-
   const themeOptions: { value: ThemeMode; label: string; icon: IconName }[] = [
     { value: "light", label: "Claro", icon: "sun" },
     { value: "dark", label: "Escuro", icon: "moon" },
@@ -140,7 +125,7 @@ export function AccessibilityMenu() {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-controls="menu-acessibilidade"
-        aria-label="Opções de acessibilidade: tema, tamanho do texto e Libras"
+        aria-label="Opções de acessibilidade: tema e tamanho do texto"
         className="rounded-full border border-line p-2.5 text-ink-700 transition-colors hover:border-azure-500 hover:text-link"
       >
         <Icon name="accessibility" className="h-5 w-5" />
@@ -199,20 +184,6 @@ export function AccessibilityMenu() {
             </button>
           </div>
 
-          <p className="mt-4 text-xs font-semibold tracking-wider text-ink-500 uppercase">
-            Libras
-          </p>
-          <button
-            type="button"
-            onClick={openLibras}
-            className="mt-2 w-full rounded-lg border border-line px-3 py-2 text-sm font-medium text-ink-700 transition-colors hover:border-action hover:text-link"
-          >
-            Abrir tradutor de Libras (VLibras)
-          </button>
-          <p className="mt-2 text-xs leading-relaxed text-ink-500">
-            O tradutor também fica disponível no botão azul da lateral direita
-            da tela.
-          </p>
         </div>
       )}
     </div>

@@ -5,10 +5,16 @@
 > **azul da fachada `#2E6FB5`** como cor de ação (botões/links/brilhos);
 > superfícies escuras ganharam **aurora + grain + dotgrid** e vidro
 > (glassmorphism); cards em bento com filete dourado; botões em pill;
-> **tema escuro** automático (segue o sistema) com alternância manual,
-> tamanho de fonte ajustável e **VLibras** sob demanda no menu de
-> acessibilidade. Tokens completos em `src/app/globals.css`. Estudo de
-> identidade/logotipo em `docs/06-identidade-visual.md`.
+> **tema** claro/escuro/sistema (padrão sistema) e tamanho de fonte
+> ajustável no menu de acessibilidade. Tokens completos em
+> `src/app/globals.css`. Estudo de identidade/logotipo em
+> `docs/06-identidade-visual.md`.
+>
+> O tradutor VLibras foi implementado e removido em seguida: mesmo na
+> integração oficial (marcação presente desde o carregamento), o plugin
+> não inicializou de forma confiável em produção. Alternativas futuras de
+> acessibilidade para surdos: contratar intérprete para vídeos
+> institucionais ou reavaliar o plugin em nova versão.
 
 ## Conceito: "Sobriedade premium"
 
