@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — Cartório de Notas e de Protesto de Potirendaba/SP
+ * Conceito: "sobriedade premium" — navy institucional, branco, fio dourado.
+ * Ver docs/03-design-system.md
+ */
+:root {
+  --navy-950: #0b1d33;
+  --navy-900: #102a47;
+  --navy-800: #16385e;
+  --navy-700: #1e4976;
+  --navy-600: #2a5c90;
+
+  --gold-500: #b08c3e;
+  --gold-400: #c9a55c;
+  --gold-300: #ddc08a;
+
+  --ink-900: #1a2332;
+  --ink-700: #3f4c5e;
+  --ink-500: #64748b;
+
+  --surface-0: #ffffff;
+  --surface-1: #f8fafc;
+  --surface-2: #eef2f7;
+  --line: #e2e8f0;
+
+  --success: #1b7a4b;
+  --warning: #9a6b14;
+  --danger: #b3362b;
+}
+
+@theme inline {
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+
+  --color-gold-500: var(--gold-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-300: var(--gold-300);
+
+  --color-ink-900: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-lora);
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  background: var(--surface-0);
+  color: var(--ink-700);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Foco visível — WCAG 2.2 (2.4.11/2.4.13) */
+:focus-visible {
+  outline: 2px solid var(--navy-700);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--navy-700);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------------------
+ * Scroll-reveal (ADR-004): estado inicial aplicado só quando JS marca o <html>,
+ * para que sem JS (ou com reduced motion) todo conteúdo fique visível.
+ * ------------------------------------------------------------------------- */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.65s var(--ease-out-expo),
+    transform 0.65s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Accordion nativo <details> com animação de abertura */
+details.faq-item > div {
+  overflow: hidden;
+}
+
+details.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item summary .faq-chevron {
+  transition: transform 0.25s var(--ease-out-expo);
+}
+
+details.faq-item[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+
+@keyframes faq-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+details.faq-item[open] > div {
+  animation: faq-open 0.3s var(--ease-out-expo);
+}
+
+/* Sublinhado animado para links de navegação */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -2px;
+  height: 1.5px;
+  background: var(--gold-500);
+  transition: right 0.25s var(--ease-out-expo);
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  right: 0;
+}
