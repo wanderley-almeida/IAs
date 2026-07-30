@@ -1,101 +1,258 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /*
- * Design tokens — Cartório de Notas e de Protesto de Potirendaba/SP
- * Conceito: "sobriedade premium" — navy institucional, branco, fio dourado.
- * Ver docs/03-design-system.md
+ * Design tokens, Cartório de Notas e de Protesto de Potirendaba/SP.
+ * Conceito: "instituição centenária com precisão de produto digital".
+ * Navy profundo, fio dourado, aurora discreta, vidro e grain sutil.
+ * Tema claro/escuro via [data-theme] no <html> (ver ThemeInit no layout).
  */
 :root {
-  --navy-950: #0b1d33;
-  --navy-900: #102a47;
-  --navy-800: #16385e;
-  --navy-700: #1e4976;
-  --navy-600: #2a5c90;
+  color-scheme: light;
 
+  /* Escala fixa (não muda entre temas) */
+  --navy-950: #081527;
+  --navy-canvas: #0a1a30;
+  --panel: #0f2643;
+
+  /* Azul da fachada do prédio do cartório (foto de referência) */
+  --azure-500: #2e6fb5;
+  --azure-400: #4a86c9;
+
+  --gold-300: #e2c891;
+  --gold-400: #cfa95e;
   --gold-500: #b08c3e;
-  --gold-400: #c9a55c;
-  --gold-300: #ddc08a;
 
-  --ink-900: #1a2332;
-  --ink-700: #3f4c5e;
-  --ink-500: #64748b;
-
+  /* Semânticos (mudam entre temas) */
   --surface-0: #ffffff;
-  --surface-1: #f8fafc;
-  --surface-2: #eef2f7;
-  --line: #e2e8f0;
+  --surface-1: #f6f9fc;
+  --surface-2: #ecf1f8;
+  --line: #e2e9f1;
+
+  --ink-900: #17202e;
+  --ink-700: #3d4a5c;
+  --ink-500: #61718a;
+
+  --heading: #0f2a47;
+  --heading-soft: #16385e;
+  --link: #2565ab;
+  --link-hover: #1d5292;
+
+  --action: #2e6fb5;
+  --action-hover: #275f9e;
+  --action-active: #1f4e85;
+
+  --accent: #b08c3e;
+  --accent-soft: rgba(176, 140, 62, 0.1);
 
   --success: #1b7a4b;
   --warning: #9a6b14;
   --danger: #b3362b;
+
+  --glow: rgba(207, 169, 94, 0.28);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --surface-0: #0a1626;
+  --surface-1: #0d1c30;
+  --surface-2: #152840;
+  --line: #22375291;
+
+  --ink-900: #eef3fa;
+  --ink-700: #c2cfdf;
+  --ink-500: #8ba0ba;
+
+  --heading: #ecf2fa;
+  --heading-soft: #d5e2f2;
+  --link: #9cc1ea;
+  --link-hover: #b6d3f2;
+
+  --action: #2e6bae;
+  --action-hover: #3b7cc2;
+  --action-active: #275c97;
+
+  --accent: #cfa95e;
+  --accent-soft: rgba(207, 169, 94, 0.12);
+
+  --success: #4fc088;
+  --warning: #dcaf52;
+  --danger: #e57365;
 }
 
 @theme inline {
   --color-navy-950: var(--navy-950);
-  --color-navy-900: var(--navy-900);
-  --color-navy-800: var(--navy-800);
-  --color-navy-700: var(--navy-700);
-  --color-navy-600: var(--navy-600);
+  --color-navy-canvas: var(--navy-canvas);
+  --color-panel: var(--panel);
+  --color-azure-500: var(--azure-500);
+  --color-azure-400: var(--azure-400);
 
-  --color-gold-500: var(--gold-500);
-  --color-gold-400: var(--gold-400);
   --color-gold-300: var(--gold-300);
-
-  --color-ink-900: var(--ink-900);
-  --color-ink-700: var(--ink-700);
-  --color-ink-500: var(--ink-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
 
   --color-surface-0: var(--surface-0);
   --color-surface-1: var(--surface-1);
   --color-surface-2: var(--surface-2);
   --color-line: var(--line);
 
+  --color-ink-900: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+
+  --color-heading: var(--heading);
+  --color-heading-soft: var(--heading-soft);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+
+  --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
+  --color-action-active: var(--action-active);
+
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
 
   --font-sans: var(--font-inter);
-  --font-display: var(--font-lora);
+  --font-display: var(--font-fraunces);
 
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shadow-card: 0 1px 2px rgba(8, 21, 39, 0.05), 0 8px 28px rgba(8, 21, 39, 0.06);
+  --shadow-card-hover: 0 2px 6px rgba(8, 21, 39, 0.07), 0 18px 44px rgba(8, 21, 39, 0.12);
+  --shadow-glow: 0 0 0 1px rgba(207, 169, 94, 0.35), 0 6px 24px var(--glow);
 }
 
-body {
-  background: var(--surface-0);
-  color: var(--ink-700);
-  font-family: var(--font-inter), system-ui, sans-serif;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
+@layer base {
+  body {
+    background: var(--surface-0);
+    color: var(--ink-700);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
-h1,
-h2,
-h3 {
-  text-wrap: balance;
-}
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
 
-/* Foco visível — WCAG 2.2 (2.4.11/2.4.13) */
-:focus-visible {
-  outline: 2px solid var(--navy-700);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
+  /* Foco visível, WCAG 2.2 (2.4.11/2.4.13). Em @layer base para que
+     utilitários (ex.: outline-none em campos compostos) possam sobrepor. */
+  :focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 
-::selection {
-  background: var(--navy-700);
-  color: #fff;
+  ::selection {
+    background: var(--action);
+    color: #fff;
+  }
 }
 
 /* ---------------------------------------------------------------------------
- * Scroll-reveal (ADR-004): estado inicial aplicado só quando JS marca o <html>,
- * para que sem JS (ou com reduced motion) todo conteúdo fique visível.
+ * Superfícies especiais
+ * ------------------------------------------------------------------------- */
+
+/* Fundo "aurora": navy profundo com brilhos suaves dourado e azul. */
+.aurora {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--navy-950);
+  background-image:
+    radial-gradient(52rem 30rem at 82% -12%, rgba(207, 169, 94, 0.16), transparent 60%),
+    radial-gradient(44rem 28rem at -8% 8%, rgba(46, 111, 181, 0.38), transparent 62%),
+    radial-gradient(60rem 40rem at 50% 118%, rgba(15, 38, 67, 0.9), transparent 70%),
+    linear-gradient(180deg, #081527 0%, #0a1a30 55%, #081527 100%);
+}
+
+/* Grain: ruído sutil que tira o aspecto "chapado" das áreas escuras. */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Malha fina de pontos, sugere precisão cartográfica/documental. */
+.dotgrid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.06;
+  mask-image: linear-gradient(180deg, transparent, black 20%, black 70%, transparent);
+}
+
+/* Vidro sobre fundos escuros. */
+.glass {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+}
+
+/* Texto com gradiente dourado (títulos de destaque). */
+.text-gold-sheen {
+  background: linear-gradient(100deg, #e2c891 0%, #cfa95e 45%, #b08c3e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Filete dourado horizontal (topo de seções/cards). */
+.hairline-gold {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent, rgba(207, 169, 94, 0.65), transparent);
+}
+
+/* Card padrão claro/escuro com elevação refinada. */
+.card {
+  background: var(--surface-0);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.25s var(--ease-out-expo),
+    box-shadow 0.25s var(--ease-out-expo),
+    border-color 0.25s var(--ease-out-expo);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(207, 169, 94, 0.45);
+}
+
+[data-theme="dark"] .card {
+  background: var(--surface-1);
+}
+
+/* ---------------------------------------------------------------------------
+ * Scroll-reveal (ADR-004): estado inicial só quando JS marca o <html>;
+ * sem JS ou com reduced motion, todo o conteúdo fica visível.
  * ------------------------------------------------------------------------- */
 html.js [data-reveal] {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(18px);
   transition:
-    opacity 0.65s var(--ease-out-expo),
-    transform 0.65s var(--ease-out-expo);
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -170,11 +327,18 @@ details.faq-item[open] > div {
   right: 100%;
   bottom: -2px;
   height: 1.5px;
-  background: var(--gold-500);
+  background: var(--gold-400);
   transition: right 0.25s var(--ease-out-expo);
 }
 
 .nav-link:hover::after,
 .nav-link[aria-current="page"]::after {
   right: 0;
+}
+
+/* Campo de busca nativo sem adornos do navegador. */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
 }

@@ -28,17 +28,17 @@ export function ContactForm() {
       "",
       message,
       "",
-      "— Mensagem enviada pelo site",
+      "- Mensagem enviada pelo site",
     ].join("\n");
 
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-      `[Site] ${subject} — ${name}`,
+      `[Site] ${subject} - ${name}`,
     )}&body=${encodeURIComponent(body)}`;
     setSent(true);
   }
 
   const inputClasses =
-    "w-full rounded-lg border border-line bg-surface-0 px-4 py-3 text-ink-900 placeholder:text-ink-500/60 focus:border-navy-600 focus:outline-none focus:ring-2 focus:ring-navy-600/20";
+    "w-full rounded-lg border border-line bg-surface-0 px-4 py-3 text-ink-900 placeholder:text-ink-500/60 focus:border-azure-500 focus:outline-none focus:ring-2 focus:ring-azure-500/25";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
@@ -46,7 +46,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="contact-name"
-            className="mb-1.5 block text-sm font-medium text-navy-900"
+            className="mb-1.5 block text-sm font-medium text-heading"
           >
             Nome completo <span aria-hidden="true" className="text-danger">*</span>
           </label>
@@ -62,7 +62,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="contact-phone"
-            className="mb-1.5 block text-sm font-medium text-navy-900"
+            className="mb-1.5 block text-sm font-medium text-heading"
           >
             Telefone
           </label>
@@ -79,7 +79,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="contact-subject"
-          className="mb-1.5 block text-sm font-medium text-navy-900"
+          className="mb-1.5 block text-sm font-medium text-heading"
         >
           Assunto <span aria-hidden="true" className="text-danger">*</span>
         </label>
@@ -97,7 +97,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="contact-message"
-          className="mb-1.5 block text-sm font-medium text-navy-900"
+          className="mb-1.5 block text-sm font-medium text-heading"
         >
           Mensagem <span aria-hidden="true" className="text-danger">*</span>
         </label>
@@ -114,8 +114,8 @@ export function ContactForm() {
       <p className="text-xs leading-relaxed text-ink-500">
         Ao enviar, seu aplicativo de e-mail será aberto com a mensagem
         preenchida, endereçada a {site.email}. Seus dados são usados apenas
-        para responder ao seu contato — consulte a{" "}
-        <a href="/privacidade" className="text-navy-700 underline underline-offset-2">
+        para responder ao seu contato - consulte a{" "}
+        <a href="/privacidade" className="text-link underline underline-offset-2">
           Política de Privacidade
         </a>
         .
@@ -123,7 +123,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center gap-2 rounded-lg bg-navy-700 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-navy-600"
+        className="inline-flex items-center gap-2 rounded-lg bg-action px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-action-hover"
       >
         <Icon name="mail" className="h-4.5 w-4.5" />
         Enviar mensagem

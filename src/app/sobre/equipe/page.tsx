@@ -35,10 +35,10 @@ export default function EquipePage() {
                 style={{ "--reveal-delay": `${i * 80}ms` } as React.CSSProperties}
                 className="rounded-2xl border border-line bg-surface-1 p-6"
               >
-                <span className="inline-flex rounded-full bg-navy-700/[0.08] p-3 text-navy-700">
+                <span className="inline-flex rounded-full bg-action/10 p-3 text-link">
                   <Icon name="userCheck" className="h-6 w-6" />
                 </span>
-                <h2 className="mt-4 text-lg font-semibold text-navy-900">
+                <h2 className="mt-4 text-lg font-semibold text-heading">
                   {member.name === PENDING ? (
                     <span className="text-ink-500 italic">{PENDING}</span>
                   ) : (

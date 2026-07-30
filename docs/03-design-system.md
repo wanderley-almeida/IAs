@@ -1,5 +1,15 @@
 # Fase 3 — Design System
 
+> **Adendo v2 (jul/2026):** após feedback do cliente e foto da fachada, o
+> design system evoluiu: display passou de Lora para **Fraunces**; entrou o
+> **azul da fachada `#2E6FB5`** como cor de ação (botões/links/brilhos);
+> superfícies escuras ganharam **aurora + grain + dotgrid** e vidro
+> (glassmorphism); cards em bento com filete dourado; botões em pill;
+> **tema escuro** automático (segue o sistema) com alternância manual,
+> tamanho de fonte ajustável e **VLibras** sob demanda no menu de
+> acessibilidade. Tokens completos em `src/app/globals.css`. Estudo de
+> identidade/logotipo em `docs/06-identidade-visual.md`.
+
 ## Conceito: "Sobriedade premium"
 
 O site deve parecer um **escritório de alto padrão**, não um órgão burocrático nem uma

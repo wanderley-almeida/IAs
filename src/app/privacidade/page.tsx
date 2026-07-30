@@ -23,7 +23,7 @@ export default function PrivacidadePage() {
       <article className="bg-surface-0">
         <div className="mx-auto max-w-3xl space-y-10 px-4 py-16 leading-relaxed sm:px-6 md:py-20">
           <section aria-labelledby="pp-quem">
-            <h2 id="pp-quem" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="pp-quem" className="font-display text-2xl font-medium text-heading">
               1. Quem somos
             </h2>
             <p className="mt-3">
@@ -34,12 +34,12 @@ export default function PrivacidadePage() {
           </section>
 
           <section aria-labelledby="pp-dados">
-            <h2 id="pp-dados" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="pp-dados" className="font-display text-2xl font-medium text-heading">
               2. Quais dados tratamos
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                <strong className="font-semibold text-navy-900">No site:</strong>{" "}
+                <strong className="font-semibold text-heading">No site:</strong>{" "}
                 este site institucional não utiliza cookies de rastreamento nem
                 ferramentas de publicidade. Os dados que você informar
                 voluntariamente no formulário de contato (nome, telefone,
@@ -47,17 +47,17 @@ export default function PrivacidadePage() {
                 solicitação.
               </li>
               <li>
-                <strong className="font-semibold text-navy-900">No atendimento:</strong>{" "}
+                <strong className="font-semibold text-heading">No atendimento:</strong>{" "}
                 para a prática de atos notariais e de protesto, tratamos os
                 dados exigidos por lei (identificação, estado civil, endereço,
-                dados de títulos), em cumprimento de obrigação legal — arts.
+                dados de títulos), em cumprimento de obrigação legal - arts.
                 7º, II, e 23 da LGPD.
               </li>
             </ul>
           </section>
 
           <section aria-labelledby="pp-finalidade">
-            <h2 id="pp-finalidade" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="pp-finalidade" className="font-display text-2xl font-medium text-heading">
               3. Para que usamos
             </h2>
             <p className="mt-3">
@@ -70,7 +70,7 @@ export default function PrivacidadePage() {
           </section>
 
           <section aria-labelledby="pp-compart">
-            <h2 id="pp-compart" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="pp-compart" className="font-display text-2xl font-medium text-heading">
               4. Com quem compartilhamos
             </h2>
             <p className="mt-3">
@@ -82,7 +82,7 @@ export default function PrivacidadePage() {
           </section>
 
           <section aria-labelledby="pp-guarda">
-            <h2 id="pp-guarda" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="pp-guarda" className="font-display text-2xl font-medium text-heading">
               5. Por quanto tempo guardamos
             </h2>
             <p className="mt-3">
@@ -93,17 +93,17 @@ export default function PrivacidadePage() {
           </section>
 
           <section aria-labelledby="pp-direitos">
-            <h2 id="pp-direitos" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="pp-direitos" className="font-display text-2xl font-medium text-heading">
               6. Seus direitos
             </h2>
             <p className="mt-3">
               A LGPD garante a você direitos de acesso, correção e informação
-              sobre o tratamento dos seus dados — observados os limites das
+              sobre o tratamento dos seus dados - observados os limites das
               obrigações legais da atividade notarial e de protesto. Saiba como
               exercê-los na página{" "}
               <Link
                 href="/lgpd"
-                className="font-medium text-navy-700 underline underline-offset-2"
+                className="font-medium text-link underline underline-offset-2"
               >
                 LGPD
               </Link>
@@ -112,7 +112,7 @@ export default function PrivacidadePage() {
           </section>
 
           <section aria-labelledby="pp-contato">
-            <h2 id="pp-contato" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="pp-contato" className="font-display text-2xl font-medium text-heading">
               7. Como falar conosco
             </h2>
             <p className="mt-3">
@@ -120,7 +120,7 @@ export default function PrivacidadePage() {
               e-mail{" "}
               <a
                 href={`mailto:${site.email}`}
-                className="font-medium text-navy-700 underline underline-offset-2"
+                className="font-medium text-link underline underline-offset-2"
               >
                 {site.email}
               </a>{" "}

@@ -75,12 +75,12 @@ export default function SobrePage() {
               <SectionHeading eyebrow="Quem somos" title="O que fazemos" />
               <p>
                 Reunimos, em uma única serventia, as atribuições de{" "}
-                <strong className="font-semibold text-navy-900">
+                <strong className="font-semibold text-heading">
                   Tabelionato de Notas
                 </strong>{" "}
-                — escrituras, procurações, testamentos, atas notariais,
-                reconhecimento de firma e autenticações — e de{" "}
-                <strong className="font-semibold text-navy-900">
+                - escrituras, procurações, testamentos, atas notariais,
+                reconhecimento de firma e autenticações - e de{" "}
+                <strong className="font-semibold text-heading">
                   Tabelionato de Protesto de Letras e Títulos
                 </strong>
                 , responsável pela cobrança formal de títulos e pela emissão de
@@ -88,14 +88,14 @@ export default function SobrePage() {
               </p>
               <p>
                 Nossa função é dar forma jurídica segura à vontade das pessoas e
-                eficácia às relações de crédito — prevenindo conflitos antes que
+                eficácia às relações de crédito - prevenindo conflitos antes que
                 eles aconteçam. É o que a doutrina chama de{" "}
                 <em>justiça preventiva</em>.
               </p>
               <p>
                 A atividade é fiscalizada pela Corregedoria Geral da Justiça do
                 Estado de São Paulo e pelo Conselho Nacional de Justiça, com
-                emolumentos fixados em lei estadual — idênticos em qualquer
+                emolumentos fixados em lei estadual - idênticos em qualquer
                 cartório paulista.
               </p>
             </div>
@@ -107,10 +107,10 @@ export default function SobrePage() {
                   href={page.href}
                   data-reveal
                   style={{ "--reveal-delay": `${i * 80}ms` } as React.CSSProperties}
-                  className="group flex items-center justify-between gap-4 rounded-2xl border border-line bg-surface-1 p-6 transition-all hover:-translate-y-0.5 hover:border-navy-600/40 hover:shadow-md"
+                  className="group flex items-center justify-between gap-4 rounded-2xl border border-line bg-surface-1 p-6 transition-all hover:-translate-y-0.5 hover:border-azure-500/40 hover:shadow-md"
                 >
                   <div>
-                    <h2 className="text-lg font-semibold text-navy-900">
+                    <h2 className="text-lg font-semibold text-heading">
                       {page.title}
                     </h2>
                     <p className="mt-1 text-[0.9375rem] text-ink-500">
@@ -149,7 +149,7 @@ export default function SobrePage() {
                 <span className="inline-block rounded-xl bg-gold-500/10 p-2.5 text-gold-500">
                   <Icon name={value.icon} className="h-6 w-6" />
                 </span>
-                <h3 className="mt-4 font-semibold text-navy-900">
+                <h3 className="mt-4 font-semibold text-heading">
                   {value.title}
                 </h3>
                 <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-500">

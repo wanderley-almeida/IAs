@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { search, type SearchResult } from "@/lib/search";
 import { Icon } from "@/components/ui/Icon";
 
-/** Página de busca completa — mesma engine do dialog (⌘K). */
+/** Página de busca completa - mesma engine do dialog (⌘K). */
 export function SearchResults() {
   const router = useRouter();
   const params = useSearchParams();
@@ -26,7 +26,7 @@ export function SearchResults() {
 
   return (
     <div>
-      <div className="flex items-center gap-3 rounded-xl border border-line bg-surface-0 px-5 shadow-sm focus-within:border-navy-600 focus-within:ring-2 focus-within:ring-navy-600/20">
+      <div className="flex items-center gap-3 rounded-xl border border-line bg-surface-0 px-5 shadow-sm focus-within:border-azure-500 focus-within:ring-2 focus-within:ring-azure-500/25">
         <Icon name="search" className="h-5 w-5 text-ink-500" />
         <input
           type="search"
@@ -53,13 +53,13 @@ export function SearchResults() {
             <li key={entry.href}>
               <Link
                 href={entry.href}
-                className="group flex items-start justify-between gap-4 rounded-2xl border border-line bg-surface-0 p-5 transition-all hover:-translate-y-0.5 hover:border-navy-600/40 hover:shadow-md"
+                className="group flex items-start justify-between gap-4 rounded-2xl border border-line bg-surface-0 p-5 transition-all hover:-translate-y-0.5 hover:border-azure-500/40 hover:shadow-md"
               >
                 <span>
                   <span className="text-xs font-medium tracking-wide text-gold-500 uppercase">
                     {entry.group}
                   </span>
-                  <span className="mt-1 block text-lg font-semibold text-navy-900 group-hover:text-navy-700">
+                  <span className="mt-1 block text-lg font-semibold text-heading group-hover:text-link">
                     {entry.title}
                   </span>
                   <span className="mt-1 block text-[0.9375rem] text-ink-500">
@@ -81,11 +81,11 @@ export function SearchResults() {
               Tente termos mais simples (“firma”, “boleto”, “escritura”) ou{" "}
               <Link
                 href="/contato"
-                className="font-medium text-navy-700 underline underline-offset-2"
+                className="font-medium text-link underline underline-offset-2"
               >
                 fale diretamente com o cartório
               </Link>{" "}
-              — orientamos você pelo telefone em poucos minutos.
+              - orientamos você pelo telefone em poucos minutos.
             </p>
           </div>
         )}

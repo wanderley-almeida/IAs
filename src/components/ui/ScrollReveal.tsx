@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
  * Observador global de scroll-reveal (ADR-004).
  *
  * Marca o <html> com a classe `js` (o CSS só esconde elementos [data-reveal]
- * quando JS está ativo — sem JS, tudo fica visível) e revela cada elemento
+ * quando JS está ativo - sem JS, tudo fica visível) e revela cada elemento
  * uma única vez ao entrar no viewport. `prefers-reduced-motion` é tratado
  * no CSS. Re-executa a cada navegação do App Router.
  */

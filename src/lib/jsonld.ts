@@ -81,19 +81,3 @@ export function breadcrumbJsonLd(crumbs: Crumb[]) {
   };
 }
 
-export function articleJsonLd(article: {
-  title: string;
-  excerpt: string;
-  date: string;
-  slug: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    headline: article.title,
-    description: article.excerpt,
-    datePublished: article.date,
-    url: `${site.url}/noticias/${article.slug}`,
-    publisher: { "@id": `${site.url}/#organization` },
-  };
-}

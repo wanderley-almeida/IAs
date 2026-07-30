@@ -10,7 +10,7 @@ interface Need {
   linkLabel: string;
 }
 
-/** Entrada alternativa por necessidade — o usuário nem sempre conhece o nome do ato. */
+/** Entrada alternativa por necessidade - o usuário nem sempre conhece o nome do ato. */
 const needs: Need[] = [
   {
     icon: "home",
@@ -32,7 +32,7 @@ const needs: Need[] = [
     icon: "scale",
     title: "Preciso cobrar um cliente",
     description:
-      "O protesto é o meio legal mais rápido e barato de cobrança formal — a maioria paga em dias.",
+      "O protesto é o meio legal mais rápido e barato de cobrança formal - a maioria paga em dias.",
     href: "/servicos/protesto/protesto-de-titulos",
     linkLabel: "Protesto de títulos",
   },
@@ -82,18 +82,18 @@ export function NeedsGrid() {
               href={need.href}
               data-reveal
               style={{ "--reveal-delay": `${(i % 3) * 80}ms` } as React.CSSProperties}
-              className="group flex flex-col rounded-2xl border border-line bg-surface-0 p-6 transition-all duration-200 hover:-translate-y-1 hover:border-navy-600/40 hover:shadow-lg"
+              className="card card-hover group flex flex-col p-6"
             >
               <span className="w-fit rounded-xl bg-gold-500/10 p-2.5 text-gold-500">
                 <Icon name={need.icon} className="h-6 w-6" />
               </span>
-              <h3 className="mt-4 text-lg leading-snug font-semibold text-navy-900">
+              <h3 className="mt-4 text-lg leading-snug font-semibold text-heading">
                 {need.title}
               </h3>
               <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-500">
                 {need.description}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-navy-700">
+              <span className="mt-4 inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-link">
                 {need.linkLabel}
                 <Icon
                   name="arrowRight"

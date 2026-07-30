@@ -46,33 +46,33 @@ export default function LgpdPage() {
         crumbs={[{ label: "LGPD", href: "/lgpd" }]}
         eyebrow="Proteção de dados"
         title="Lei Geral de Proteção de Dados"
-        lede="A atividade notarial e de protesto trata dados pessoais por obrigação legal — e leva a proteção deles a sério."
+        lede="A atividade notarial e de protesto trata dados pessoais por obrigação legal - e leva a proteção deles a sério."
       />
 
       <div className="bg-surface-0">
         <div className="mx-auto max-w-3xl space-y-12 px-4 py-16 leading-relaxed sm:px-6 md:py-20">
           <section aria-labelledby="lgpd-base">
-            <h2 id="lgpd-base" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="lgpd-base" className="font-display text-2xl font-medium text-heading">
               Base legal do tratamento
             </h2>
             <p className="mt-3">
               Cartórios tratam dados pessoais no{" "}
-              <strong className="font-semibold text-navy-900">
+              <strong className="font-semibold text-heading">
                 cumprimento de obrigação legal
               </strong>{" "}
               (art. 7º, II, da Lei nº 13.709/2018) e no{" "}
-              <strong className="font-semibold text-navy-900">
+              <strong className="font-semibold text-heading">
                 exercício de função pública delegada
               </strong>{" "}
-              (art. 23). Por isso, determinados atos — como o protesto e seus
-              registros — têm publicidade prevista em lei e não dependem de
+              (art. 23). Por isso, determinados atos - como o protesto e seus
+              registros - têm publicidade prevista em lei e não dependem de
               consentimento do titular, nem podem ser apagados por simples
               solicitação.
             </p>
           </section>
 
           <section aria-labelledby="lgpd-direitos">
-            <h2 id="lgpd-direitos" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="lgpd-direitos" className="font-display text-2xl font-medium text-heading">
               Seus direitos como titular
             </h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -84,7 +84,7 @@ export default function LgpdPage() {
                   <span className="inline-flex rounded-lg bg-gold-500/10 p-2 text-gold-500">
                     <Icon name={right.icon} className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-3 font-semibold text-navy-900">
+                  <h3 className="mt-3 font-semibold text-heading">
                     {right.title}
                   </h3>
                   <p className="mt-1.5 text-[0.9375rem] text-ink-500">
@@ -96,25 +96,25 @@ export default function LgpdPage() {
           </section>
 
           <section aria-labelledby="lgpd-encarregado">
-            <h2 id="lgpd-encarregado" className="font-display text-2xl font-medium text-navy-900">
+            <h2 id="lgpd-encarregado" className="font-display text-2xl font-medium text-heading">
               Canal do encarregado (DPO)
             </h2>
             <div className="mt-4 rounded-2xl border border-line bg-surface-1 p-6">
               <dl className="space-y-3 text-[0.9375rem]">
                 <div>
-                  <dt className="font-semibold text-navy-900">Encarregado pelo tratamento de dados</dt>
+                  <dt className="font-semibold text-heading">Encarregado pelo tratamento de dados</dt>
                   <dd className="mt-0.5 text-ink-500 italic">{PENDING}</dd>
                 </div>
                 <div>
-                  <dt className="font-semibold text-navy-900">Canal de atendimento</dt>
+                  <dt className="font-semibold text-heading">Canal de atendimento</dt>
                   <dd className="mt-0.5">
                     <a
-                      href={`mailto:${site.email}?subject=${encodeURIComponent("LGPD — Solicitação de titular de dados")}`}
-                      className="font-medium text-navy-700 underline underline-offset-2"
+                      href={`mailto:${site.email}?subject=${encodeURIComponent("LGPD - Solicitação de titular de dados")}`}
+                      className="font-medium text-link underline underline-offset-2"
                     >
                       {site.email}
                     </a>{" "}
-                    (assunto: “LGPD — Solicitação de titular de dados”)
+                    (assunto: “LGPD - Solicitação de titular de dados”)
                   </dd>
                 </div>
               </dl>
@@ -125,7 +125,7 @@ export default function LgpdPage() {
               extrajudicial. Consulte também nossa{" "}
               <Link
                 href="/privacidade"
-                className="font-medium text-navy-700 underline underline-offset-2"
+                className="font-medium text-link underline underline-offset-2"
               >
                 Política de Privacidade
               </Link>

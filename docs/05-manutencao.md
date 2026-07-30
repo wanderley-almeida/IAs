@@ -29,7 +29,6 @@ Todo o conteúdo vive em `src/content/` — nenhuma página precisa ser tocada.
 | Tarefa | Arquivo | Como |
 |---|---|---|
 | Corrigir telefone, horário, CNPJ… | `site.ts` | Editar o campo; tudo atualiza (header, footer, contato, transparência, JSON-LD) |
-| Publicar notícia | `news.ts` | Adicionar objeto no início do array (slug, título, resumo, data, categoria, parágrafos) |
 | Alterar/adicionar serviço | `services.ts` | Editar o objeto do serviço; menus, cards, busca e sitemap derivam dele |
 | Editar FAQ | `faq.ts` | Adicionar/editar itens por categoria |
 | Atualizar equipe | `team.ts` | Substituir os registros `PENDING` pelos nomes reais |
@@ -54,8 +53,10 @@ faltando é erro de compilação — não vai silenciosamente ao ar.
 
 * **Formulário de contato** usa `mailto:` (ADR-007) — integrar um provedor de
   envio (Resend, Formspree ou API própria) quando houver backend/infra.
-* **Notícias em arquivo** escalam bem até algumas dezenas; acima disso,
-  migrar para CMS headless (as interfaces em `src/types/` viram o schema).
+* **Seção de notícias removida na v2** por decisão do cliente (sem equipe para
+  alimentar conteúdo manual); substituída por bloco permanente de segurança
+  anti-golpe na home. Se um dia houver equipe editorial, o histórico da
+  implementação está no git (commit b9600ee).
 * **E-mail institucional** em domínio próprio (hoje Gmail) fortalece a
   credibilidade e o SPF/DKIM.
 * **Fotos reais** do prédio, da equipe e da tabeliã elevariam o nível de

@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
-  <rect x="1.5" y="1.5" width="41" height="41" rx="8" fill="#102A47"/>
-  <rect x="4.5" y="4.5" width="35" height="35" rx="6" fill="none" stroke="#C9A55C" stroke-width="1"/>
-  <text x="22" y="28.5" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="600" fill="#FFFFFF" letter-spacing="0.5">CP</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <circle cx="24" cy="24" r="22.6" fill="none" stroke="#B08C3E" stroke-width="1.4"/>
+  <circle cx="24" cy="24" r="20.6" fill="none" stroke="#CFA95E" stroke-width="0.9" stroke-dasharray="0.4 2.4" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="18.7" fill="#0F2643"/>
+  <circle cx="24" cy="24" r="18.7" fill="none" stroke="#CFA95E" stroke-width="0.7"/>
+  <path d="M24 10.4l.85 2.35L27.2 13.6l-2.35.85L24 16.8l-.85-2.35-2.35-.85 2.35-.85z" fill="#CFA95E"/>
+  <text x="24" y="28.6" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="600" fill="#CFA95E" letter-spacing="0.6">CP</text>
+  <path d="M24 31.2c2 1.05 2.9 2.5 2.9 4.1L24 38l-2.9-2.7c0-1.6.9-3.05 2.9-4.1z" fill="#CFA95E"/>
+  <line x1="24" y1="33.1" x2="24" y2="36.4" stroke="#0F2643" stroke-width="0.7"/>
+  <circle cx="24" cy="33.2" r="0.75" fill="#0F2643"/>
 </svg>

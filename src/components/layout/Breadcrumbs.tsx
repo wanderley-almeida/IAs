@@ -16,8 +16,8 @@ export function Breadcrumbs({
 }) {
   const all: Crumb[] = [{ label: "Início", href: "/" }, ...crumbs];
   const base = dark ? "text-white/65" : "text-ink-500";
-  const link = dark ? "hover:text-white" : "hover:text-navy-700";
-  const current = dark ? "text-white" : "text-navy-900";
+  const link = dark ? "hover:text-white" : "hover:text-link";
+  const current = dark ? "text-white" : "text-heading";
 
   return (
     <nav aria-label="Trilha de navegação" className={`text-sm ${base}`}>

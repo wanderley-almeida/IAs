@@ -5,60 +5,69 @@ import { HeroSearchTrigger } from "./HeroSearchTrigger";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-950 text-white">
-      {/* Textura sutil: linhas finas douradas em arco */}
+    <section className="aurora grain dotgrid relative overflow-hidden text-white">
+      {/* Anéis concêntricos: eco do selo notarial */}
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 -right-40 h-[36rem] w-[36rem] text-gold-400/[0.07]"
+        className="pointer-events-none absolute -top-48 -right-48 h-[42rem] w-[42rem] text-gold-400/[0.08]"
         viewBox="0 0 400 400"
         fill="none"
       >
-        {[80, 120, 160, 200, 240].map((r) => (
+        {[70, 110, 150, 190, 230].map((r) => (
           <circle key={r} cx="200" cy="200" r={r} stroke="currentColor" />
         ))}
+        <circle
+          cx="200"
+          cy="200"
+          r={170}
+          stroke="currentColor"
+          strokeDasharray="2 10"
+          className="text-gold-400/20"
+        />
       </svg>
 
-      <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-14 sm:px-6 md:pt-24 md:pb-20">
+      <div className="relative mx-auto max-w-7xl px-4 pt-20 pb-24 sm:px-6 md:pt-28 md:pb-32">
         <div className="max-w-3xl">
           <p
             data-reveal
-            className="mb-4 flex items-center gap-2 text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-gold-400"
+            className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[0.8125rem] font-medium tracking-wide text-white/85 backdrop-blur"
           >
-            <Icon name="seal" className="h-4.5 w-4.5" />
-            Serventia oficial · Potirendaba desde {site.foundedYear}
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold-400" />
+            Serventia oficial de Potirendaba desde {site.foundedYear}
           </p>
 
           <h1
             data-reveal
-            style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
-            className="font-display text-4xl leading-[1.12] font-medium md:text-6xl"
+            style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
+            className="font-display text-[2.75rem] leading-[1.06] font-medium tracking-[-0.01em] md:text-[4.25rem]"
           >
-            Segurança jurídica com atendimento{" "}
-            <span className="text-gold-400">próximo e humano</span>
+            Segurança jurídica com
+            <br />
+            <span className="text-gold-sheen italic">atendimento humano</span>
           </h1>
 
           <p
             data-reveal
-            style={{ "--reveal-delay": "160ms" } as React.CSSProperties}
-            className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl"
+            style={{ "--reveal-delay": "180ms" } as React.CSSProperties}
+            className="mt-7 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl"
           >
-            Escrituras, procurações, reconhecimento de firma, protesto de
-            títulos e muito mais — com a fé pública de quem serve a região há
-            mais de um século.
+            Escrituras, procurações, reconhecimento de firma e protesto de
+            títulos, com a fé pública de quem serve a região há mais de um
+            século.
           </p>
 
           <div
             data-reveal
-            style={{ "--reveal-delay": "240ms" } as React.CSSProperties}
-            className="mt-8"
+            style={{ "--reveal-delay": "270ms" } as React.CSSProperties}
+            className="mt-9"
           >
             <HeroSearchTrigger />
           </div>
 
           <div
             data-reveal
-            style={{ "--reveal-delay": "320ms" } as React.CSSProperties}
-            className="mt-6 flex flex-wrap gap-3"
+            style={{ "--reveal-delay": "360ms" } as React.CSSProperties}
+            className="mt-7 flex flex-wrap items-center gap-3"
           >
             <Button href="/servicos" variant="gold" size="lg">
               Conhecer os serviços
@@ -68,33 +77,35 @@ export function Hero() {
               href="/contato"
               variant="secondary"
               size="lg"
-              className="border-white/25 bg-transparent text-white hover:border-gold-400 hover:text-gold-400"
+              className="border-white/20 bg-white/[0.04] text-white backdrop-blur hover:border-gold-400/70 hover:text-gold-300"
             >
               Falar com o cartório
             </Button>
           </div>
-        </div>
-      </div>
 
-      {/* Faixa de dados essenciais */}
-      <div className="relative border-t border-white/10 bg-navy-900/60">
-        <div className="mx-auto grid max-w-7xl gap-4 px-4 py-5 text-sm text-white/80 sm:grid-cols-3 sm:px-6">
-          <p className="flex items-center gap-2.5">
-            <Icon name="mapPin" className="h-4.5 w-4.5 shrink-0 text-gold-400" />
-            {site.address.street}, {site.address.number} — {site.address.city}/
-            {site.address.state}
-          </p>
-          <p className="flex items-center gap-2.5">
-            <Icon name="clock" className="h-4.5 w-4.5 shrink-0 text-gold-400" />
-            {site.hours.label}
-          </p>
-          <a
-            href={site.phoneHref}
-            className="flex items-center gap-2.5 transition-colors hover:text-white"
+          <ul
+            data-reveal
+            style={{ "--reveal-delay": "440ms" } as React.CSSProperties}
+            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/65"
           >
-            <Icon name="phone" className="h-4.5 w-4.5 shrink-0 text-gold-400" />
-            {site.phone}
-          </a>
+            <li className="flex items-center gap-2.5">
+              <Icon name="mapPin" className="h-4.5 w-4.5 text-gold-400" />
+              {site.address.street}, {site.address.number}, Centro
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Icon name="clock" className="h-4.5 w-4.5 text-gold-400" />
+              {site.hours.label}
+            </li>
+            <li>
+              <a
+                href={site.phoneHref}
+                className="flex items-center gap-2.5 transition-colors hover:text-white"
+              >
+                <Icon name="phone" className="h-4.5 w-4.5 text-gold-400" />
+                {site.phone}
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

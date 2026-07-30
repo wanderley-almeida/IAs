@@ -20,7 +20,7 @@ export default function BuscaPage() {
         crumbs={[{ label: "Busca", href: "/busca" }]}
         eyebrow="Busca"
         title="O que você procura?"
-        lede="Pesquise por serviços, dúvidas e informações — em linguagem do dia a dia: “firma”, “boleto”, “escritura”…"
+        lede="Pesquise por serviços, dúvidas e informações - em linguagem do dia a dia: “firma”, “boleto”, “escritura”…"
       />
       <section className="bg-surface-0">
         <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-16">

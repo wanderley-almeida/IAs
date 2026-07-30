@@ -12,8 +12,8 @@ export function FaqItem({
   answer: string;
 }) {
   return (
-    <details className="faq-item group rounded-xl border border-line bg-surface-0 transition-colors hover:border-navy-600/40">
-      <summary className="flex items-center justify-between gap-4 px-5 py-4 text-left font-medium text-navy-900">
+    <details className="faq-item group rounded-xl border border-line bg-surface-0 transition-colors hover:border-azure-500/40">
+      <summary className="flex items-center justify-between gap-4 px-5 py-4 text-left font-medium text-heading">
         <span>{question}</span>
         <Icon
           name="chevronDown"

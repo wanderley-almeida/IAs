@@ -13,7 +13,7 @@ export default function NotFound() {
     <section className="bg-surface-0">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 py-28 text-center sm:px-6">
         <p className="font-display text-7xl font-medium text-gold-500/50">404</p>
-        <h1 className="font-display mt-4 text-3xl font-medium text-navy-900">
+        <h1 className="font-display mt-4 text-3xl font-medium text-heading">
           Página não encontrada
         </h1>
         <p className="mt-4 max-w-md text-lg text-ink-500">
@@ -35,7 +35,7 @@ export default function NotFound() {
               <li key={s.href}>
                 <Link
                   href={s.href}
-                  className="inline-block rounded-full border border-line px-4 py-2 text-sm text-ink-700 transition-colors hover:border-navy-600 hover:text-navy-700"
+                  className="inline-block rounded-full border border-line px-4 py-2 text-sm text-ink-700 transition-colors hover:border-azure-500 hover:text-link"
                 >
                   {s.label}
                 </Link>
