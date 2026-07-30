@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Icon } from "@/components/ui/Icon";
 import { Logo } from "./Logo";
 import { SearchDialog } from "./SearchDialog";
+import { AccessibilityMenu } from "./AccessibilityMenu";
 import { aboutNav, primaryLinks, servicesNav } from "./nav";
 
 type Menu = "servicos" | "cartorio" | null;
@@ -90,10 +91,11 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
+    <>
     <header
       className={cn(
-        "sticky top-0 z-40 bg-surface-0/95 backdrop-blur transition-shadow",
-        scrolled ? "shadow-[0_1px_12px_rgba(11,29,51,0.08)]" : "",
+        "sticky top-0 z-40 bg-surface-0/80 backdrop-blur-xl transition-shadow",
+        scrolled ? "shadow-[0_1px_16px_rgba(8,21,39,0.1)]" : "",
       )}
     >
       {/* Faixa superior institucional */}
@@ -136,7 +138,7 @@ export function Header() {
             <Link
               href="/"
               aria-current={pathname === "/" ? "page" : undefined}
-              className="nav-link px-3 py-2 text-[0.9375rem] font-medium text-ink-700 transition-colors hover:text-navy-700"
+              className="nav-link px-3 py-2 text-[0.9375rem] font-medium text-ink-700 transition-colors hover:text-link"
             >
               Início
             </Link>
@@ -153,8 +155,8 @@ export function Header() {
                 className={cn(
                   "flex items-center gap-1 rounded-md px-3 py-2 text-[0.9375rem] font-medium transition-colors",
                   isActive("/servicos")
-                    ? "text-navy-700"
-                    : "text-ink-700 hover:text-navy-700",
+                    ? "text-link"
+                    : "text-ink-700 hover:text-link",
                 )}
               >
                 Serviços
@@ -186,7 +188,7 @@ export function Header() {
                             <li key={link.href}>
                               <Link
                                 href={link.href}
-                                className="block rounded-lg px-3 py-2 text-[0.9375rem] text-ink-700 transition-colors hover:bg-surface-1 hover:text-navy-700"
+                                className="block rounded-lg px-3 py-2 text-[0.9375rem] text-ink-700 transition-colors hover:bg-surface-1 hover:text-link"
                               >
                                 {link.label}
                               </Link>
@@ -199,7 +201,7 @@ export function Header() {
                   <div className="mt-4 border-t border-line pt-4">
                     <Link
                       href="/servicos"
-                      className="flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-navy-600"
+                      className="flex items-center gap-2 text-sm font-medium text-link hover:text-link-hover"
                     >
                       Ver todos os serviços
                       <Icon name="arrowRight" className="h-4 w-4" />
@@ -221,8 +223,8 @@ export function Header() {
                 className={cn(
                   "flex items-center gap-1 rounded-md px-3 py-2 text-[0.9375rem] font-medium transition-colors",
                   isActive("/sobre") || isActive("/transparencia")
-                    ? "text-navy-700"
-                    : "text-ink-700 hover:text-navy-700",
+                    ? "text-link"
+                    : "text-ink-700 hover:text-link",
                 )}
               >
                 O Cartório
@@ -244,7 +246,7 @@ export function Header() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className="block rounded-lg px-3 py-2 text-[0.9375rem] text-ink-700 transition-colors hover:bg-surface-1 hover:text-navy-700"
+                          className="block rounded-lg px-3 py-2 text-[0.9375rem] text-ink-700 transition-colors hover:bg-surface-1 hover:text-link"
                         >
                           {link.label}
                         </Link>
@@ -260,7 +262,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                className="nav-link px-3 py-2 text-[0.9375rem] font-medium text-ink-700 transition-colors hover:text-navy-700"
+                className="nav-link px-3 py-2 text-[0.9375rem] font-medium text-ink-700 transition-colors hover:text-link"
               >
                 {link.label}
               </Link>
@@ -272,22 +274,24 @@ export function Header() {
             <button
               type="button"
               onClick={openSearch}
-              className="flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-sm text-ink-500 transition-colors hover:border-navy-600 hover:text-navy-700"
+              className="flex items-center gap-2 rounded-full border border-line px-3.5 py-2 text-sm text-ink-500 transition-colors hover:border-azure-500 hover:text-link"
               aria-label="Buscar no site (atalho Ctrl+K)"
             >
               <Icon name="search" className="h-4.5 w-4.5" />
               <span className="hidden xl:inline">Buscar…</span>
               <kbd
                 aria-hidden="true"
-                className="hidden rounded border border-line bg-surface-1 px-1.5 text-[0.6875rem] xl:inline"
+                className="hidden rounded-full border border-line bg-surface-1 px-2 text-[0.6875rem] xl:inline"
               >
                 Ctrl K
               </kbd>
             </button>
 
+            <AccessibilityMenu />
+
             <a
               href={site.phoneHref}
-              className="hidden items-center gap-2 rounded-lg bg-navy-700 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-navy-600 md:flex"
+              className="hidden items-center gap-2 rounded-full bg-action px-4.5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-action-hover md:flex"
             >
               <Icon name="phone" className="h-4 w-4" />
               {site.phone}
@@ -299,15 +303,18 @@ export function Header() {
               aria-expanded={mobileOpen}
               aria-controls="menu-mobile"
               aria-label="Abrir menu"
-              className="rounded-lg border border-line p-2.5 text-navy-900 lg:hidden"
+              className="rounded-full border border-line p-2.5 text-heading lg:hidden"
             >
               <Icon name="menu" className="h-5 w-5" />
             </button>
           </div>
         </nav>
       </div>
+    </header>
 
-      {/* Menu mobile */}
+    {/* Menu mobile: renderizado FORA do <header>. O backdrop-filter do
+        header o torna bloco de contenção, o que prenderia este overlay
+        position:fixed dentro dos 72px do header (menu invisível no iOS). */}
       {mobileOpen && (
         <div
           id="menu-mobile"
@@ -322,7 +329,7 @@ export function Header() {
               type="button"
               onClick={() => setMobileOpen(false)}
               aria-label="Fechar menu"
-              className="rounded-lg border border-line p-2.5 text-navy-900"
+              className="rounded-lg border border-line p-2.5 text-heading"
             >
               <Icon name="close" className="h-5 w-5" />
             </button>
@@ -345,7 +352,7 @@ export function Header() {
               <li>
                 <Link
                   href="/"
-                  className="block rounded-lg px-3 py-3 text-lg font-medium text-navy-900"
+                  className="block rounded-lg px-3 py-3 text-lg font-medium text-heading"
                 >
                   Início
                 </Link>
@@ -354,7 +361,7 @@ export function Header() {
                 (group) => (
                   <li key={group.label}>
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-3 text-lg font-medium text-navy-900 [&::-webkit-details-marker]:hidden">
+                      <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-3 text-lg font-medium text-heading [&::-webkit-details-marker]:hidden">
                         {group.label}
                         <Icon
                           name="chevronDown"
@@ -365,7 +372,7 @@ export function Header() {
                         <li>
                           <Link
                             href={group.href}
-                            className="block rounded-lg px-3 py-2.5 font-medium text-navy-700"
+                            className="block rounded-lg px-3 py-2.5 font-medium text-link"
                           >
                             Visão geral
                           </Link>
@@ -391,7 +398,7 @@ export function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block rounded-lg px-3 py-3 text-lg font-medium text-navy-900"
+                    className="block rounded-lg px-3 py-3 text-lg font-medium text-heading"
                   >
                     {link.label}
                   </Link>
@@ -402,7 +409,7 @@ export function Header() {
             <div className="mt-8 space-y-3 rounded-2xl bg-surface-1 p-5">
               <a
                 href={site.phoneHref}
-                className="flex items-center gap-3 font-medium text-navy-700"
+                className="flex items-center gap-3 font-medium text-link"
               >
                 <Icon name="phone" className="h-5 w-5 text-gold-500" />
                 {site.phone}
@@ -426,6 +433,6 @@ export function Header() {
       {searchMounted && (
         <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
       )}
-    </header>
+    </>
   );
 }

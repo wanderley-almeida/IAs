@@ -72,7 +72,7 @@ export function SearchDialog({
         className="overflow-hidden rounded-2xl border border-line bg-surface-0 shadow-2xl"
         onKeyDown={handleKeyDown}
       >
-        <div className="flex items-center gap-3 border-b border-line px-5">
+        <div className="flex items-center gap-3 border-b border-line px-5 transition-shadow focus-within:shadow-[inset_0_-2px_0_var(--azure-500)]">
           <Icon name="search" className="h-5 w-5 text-ink-500" />
           <input
             type="search"
@@ -101,7 +101,7 @@ export function SearchDialog({
               <Link
                 href="/contato"
                 onClick={onClose}
-                className="text-navy-700 underline underline-offset-2"
+                className="text-link underline underline-offset-2"
               >
                 fale com o cartório
               </Link>
@@ -118,11 +118,11 @@ export function SearchDialog({
                     onClick={onClose}
                     className="flex items-start gap-4 px-5 py-3 transition-colors hover:bg-surface-1 focus-visible:bg-surface-1"
                   >
-                    <span className="mt-1 rounded-md bg-surface-2 p-1.5 text-navy-700">
+                    <span className="mt-1 rounded-md bg-surface-2 p-1.5 text-link">
                       <Icon name="chevronRight" className="h-4 w-4" />
                     </span>
                     <span>
-                      <span className="block font-medium text-navy-900">
+                      <span className="block font-medium text-heading">
                         {entry.title}
                       </span>
                       <span className="mt-0.5 line-clamp-1 block text-sm text-ink-500">
@@ -156,7 +156,7 @@ export function SearchDialog({
                     key={href}
                     href={href}
                     onClick={onClose}
-                    className="rounded-full border border-line px-3.5 py-1.5 text-sm text-ink-700 transition-colors hover:border-navy-600 hover:text-navy-700"
+                    className="rounded-full border border-line px-3.5 py-1.5 text-sm text-ink-700 transition-colors hover:border-azure-500 hover:text-link"
                   >
                     {label}
                   </Link>

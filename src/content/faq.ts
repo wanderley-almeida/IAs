@@ -86,7 +86,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "Quanto custam os serviços do cartório?",
         answer:
-          "Os emolumentos são tabelados por lei estadual (Lei nº 11.331/2002) e idênticos em todos os cartórios de São Paulo — não há cobrança livre. A tabela vigente está na página de Transparência; para um cálculo exato do seu caso, entre em contato.",
+          "Os emolumentos são tabelados por lei estadual (Lei nº 11.331/2002) e idênticos em todos os cartórios de São Paulo - não há cobrança livre. A tabela vigente está na página de Transparência; para um cálculo exato do seu caso, entre em contato.",
       },
       {
         question: "Por que os valores mudam todo ano?",

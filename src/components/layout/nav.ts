@@ -4,7 +4,7 @@ import {
   getServicePath,
 } from "@/content/services";
 
-/** Estrutura de navegação — derivada do catálogo de serviços (fonte única). */
+/** Estrutura de navegação - derivada do catálogo de serviços (fonte única). */
 
 export interface NavLink {
   label: string;
@@ -53,6 +53,5 @@ export const aboutNav: NavGroup = {
 
 export const primaryLinks: NavLink[] = [
   { label: "FAQ", href: "/faq" },
-  { label: "Notícias", href: "/noticias" },
   { label: "Contato", href: "/contato" },
 ];

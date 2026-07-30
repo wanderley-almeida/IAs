@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { services, getServicePath } from "@/content/services";
-import { news } from "@/content/news";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -14,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/servicos/notas",
     "/servicos/protesto",
     "/faq",
-    "/noticias",
     "/transparencia",
     "/privacidade",
     "/lgpd",
@@ -33,12 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.9,
-    })),
-    ...news.map((article) => ({
-      url: `${site.url}/noticias/${article.slug}`,
-      lastModified: new Date(article.date),
-      changeFrequency: "yearly" as const,
-      priority: 0.5,
     })),
   ];
 }

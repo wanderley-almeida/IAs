@@ -14,13 +14,13 @@ export const metadata: Metadata = pageMetadata(
 
 const officialLinks = [
   {
-    title: "Tabela de emolumentos — TJSP",
+    title: "Tabela de emolumentos - TJSP",
     description:
       "Valores oficiais de todos os atos notariais e de protesto no Estado de São Paulo, atualizados anualmente.",
     href: site.external.emolumentos,
   },
   {
-    title: "Portal Extrajudicial — TJSP",
+    title: "Portal Extrajudicial - TJSP",
     description:
       "Portal da Corregedoria Geral da Justiça com normas, comunicados e consulta de serventias.",
     href: site.external.tjspExtrajudicial,
@@ -37,7 +37,7 @@ const officialLinks = [
     href: site.external.eNotariado,
   },
   {
-    title: "CENPROT — Central Nacional de Protesto",
+    title: "CENPROT - Central Nacional de Protesto",
     description: "Consulta nacional gratuita de protestos por CPF/CNPJ.",
     href: site.external.cenprot,
   },
@@ -45,11 +45,11 @@ const officialLinks = [
 
 const norms = [
   "Constituição Federal, art. 236",
-  "Lei nº 8.935/1994 — Lei dos Cartórios",
-  "Lei nº 9.492/1997 — Lei do Protesto",
-  "Lei nº 10.406/2002 — Código Civil",
-  "Lei Estadual nº 11.331/2002 — Emolumentos/SP",
-  "Lei nº 13.709/2018 — LGPD",
+  "Lei nº 8.935/1994 - Lei dos Cartórios",
+  "Lei nº 9.492/1997 - Lei do Protesto",
+  "Lei nº 10.406/2002 - Código Civil",
+  "Lei Estadual nº 11.331/2002 - Emolumentos/SP",
+  "Lei nº 13.709/2018 - LGPD",
   "Normas de Serviço da CGJ-SP",
   "Provimentos do CNJ",
 ];
@@ -61,7 +61,7 @@ export default function TransparenciaPage() {
         crumbs={[{ label: "Transparência", href: "/transparencia" }]}
         eyebrow="Transparência"
         title="Informações oficiais da serventia"
-        lede="Emolumentos tabelados por lei, dados institucionais e os canais oficiais de consulta e fiscalização — tudo em um só lugar."
+        lede="Emolumentos tabelados por lei, dados institucionais e os canais oficiais de consulta e fiscalização - tudo em um só lugar."
       />
 
       {/* Dados da serventia */}
@@ -77,7 +77,7 @@ export default function TransparenciaPage() {
               ["Nome de fantasia", site.name],
               ["CNS (Cadastro Nacional de Serventias)", site.cns],
               ["CNPJ", site.cnpj],
-              ["Titular", `${site.titular.name} — ${site.titular.role}`],
+              ["Titular", `${site.titular.name} - ${site.titular.role}`],
               ["Substituto", site.substitute.name],
               ["Endereço", site.address.full],
               ["Telefone", site.phone],
@@ -85,7 +85,7 @@ export default function TransparenciaPage() {
               ["Horário de atendimento", `${site.hours.label}. ${site.hours.note}`],
             ].map(([label, value]) => (
               <div key={label}>
-                <dt className="text-sm font-semibold text-navy-900">{label}</dt>
+                <dt className="text-sm font-semibold text-heading">{label}</dt>
                 <dd className="mt-1 text-[0.9375rem] leading-relaxed text-ink-700">
                   {value}
                 </dd>
@@ -101,7 +101,7 @@ export default function TransparenciaPage() {
           <SectionHeading
             eyebrow="Custos"
             title="Emolumentos: tabelados e iguais em todo o estado"
-            lede="Nenhum cartório paulista pode cobrar mais — nem menos — do que a tabela fixada por lei estadual. Desconfie de intermediários que prometem 'desconto'."
+            lede="Nenhum cartório paulista pode cobrar mais - nem menos - do que a tabela fixada por lei estadual. Desconfie de intermediários que prometem 'desconto'."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {officialLinks.map((link, i) => (
@@ -112,10 +112,10 @@ export default function TransparenciaPage() {
                 rel="noopener noreferrer"
                 data-reveal
                 style={{ "--reveal-delay": `${(i % 2) * 80}ms` } as React.CSSProperties}
-                className="group flex items-start justify-between gap-4 rounded-2xl border border-line bg-surface-0 p-6 transition-all hover:-translate-y-0.5 hover:border-navy-600/40 hover:shadow-md"
+                className="group flex items-start justify-between gap-4 rounded-2xl border border-line bg-surface-0 p-6 transition-all hover:-translate-y-0.5 hover:border-azure-500/40 hover:shadow-md"
               >
                 <div>
-                  <h3 className="font-semibold text-navy-900 transition-colors group-hover:text-navy-700">
+                  <h3 className="font-semibold text-heading transition-colors group-hover:text-link">
                     {link.title}
                   </h3>
                   <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-ink-500">
@@ -153,15 +153,15 @@ export default function TransparenciaPage() {
               <SectionHeading eyebrow="Fiscalização" title="A quem recorrer" />
               <p className="mt-4 leading-relaxed">
                 A atividade desta serventia é fiscalizada pelo{" "}
-                <strong className="font-semibold text-navy-900">
+                <strong className="font-semibold text-heading">
                   Juízo Corregedor Permanente da Comarca
                 </strong>{" "}
                 e pela{" "}
-                <strong className="font-semibold text-navy-900">
+                <strong className="font-semibold text-heading">
                   Corregedoria Geral da Justiça de São Paulo
                 </strong>
                 . Reclamações e sugestões podem ser dirigidas diretamente ao
-                cartório — ou aos órgãos fiscalizadores, pelos canais do portal
+                cartório - ou aos órgãos fiscalizadores, pelos canais do portal
                 extrajudicial do TJSP.
               </p>
             </div>

@@ -1,6 +1,5 @@
 import { services, getServicePath, categoryLabels } from "@/content/services";
 import { faqCategories } from "@/content/faq";
-import { news } from "@/content/news";
 import { normalize } from "./utils";
 
 /**
@@ -107,13 +106,6 @@ const staticPages: SearchEntry[] = [
     "Institucional",
     ["lgpd", "dados pessoais", "encarregado", "dpo"],
   ),
-  entry(
-    "Notícias",
-    "Comunicados e orientações do cartório.",
-    "/noticias",
-    "Notícias",
-    ["noticias", "comunicados", "avisos"],
-  ),
 ];
 
 function buildIndex(): SearchEntry[] {
@@ -134,11 +126,7 @@ function buildIndex(): SearchEntry[] {
     ),
   );
 
-  const newsEntries = news.map((n) =>
-    entry(n.title, n.excerpt, `/noticias/${n.slug}`, "Notícias"),
-  );
-
-  return [...serviceEntries, ...staticPages, ...faqEntries, ...newsEntries];
+  return [...serviceEntries, ...staticPages, ...faqEntries];
 }
 
 const index = buildIndex();

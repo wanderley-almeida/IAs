@@ -12,7 +12,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
     <Link
       href="/"
       className="flex items-center gap-3"
-      aria-label={`${site.shortName} — página inicial`}
+      aria-label={`${site.shortName} - página inicial`}
     >
       <svg
         viewBox="0 0 44 44"
@@ -41,7 +41,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
           x="22"
           y="28.5"
           textAnchor="middle"
-          fontFamily="var(--font-lora), Georgia, serif"
+          fontFamily="var(--font-fraunces), Georgia, serif"
           fontSize="17"
           fontWeight="600"
           fill="#FFFFFF"
@@ -54,7 +54,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
         <span
           className={cn(
             "font-display text-[1.0625rem] font-semibold tracking-tight",
-            dark ? "text-white" : "text-navy-900",
+            dark ? "text-white" : "text-heading",
           )}
         >
           Cartório de Potirendaba

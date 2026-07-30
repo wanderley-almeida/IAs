@@ -22,19 +22,28 @@ const channels = [
 
 export function DigitalCta() {
   return (
-    <section aria-labelledby="digital-title" className="bg-navy-950 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr]">
+    <section
+      aria-labelledby="digital-title"
+      className="aurora grain dotgrid relative overflow-hidden text-white"
+    >
+      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
           <div data-reveal>
-            <p className="mb-3 text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-gold-400">
+            <p className="mb-4 flex items-center gap-3 text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-gold-400">
+              <span aria-hidden="true" className="h-px w-8 bg-gold-400/70" />
               Cartório digital
             </p>
-            <h2 className="font-display text-3xl leading-tight font-medium md:text-4xl">
-              Tradição de 1920, tecnologia de hoje
+            <h2
+              id="digital-title"
+              className="font-display text-[2rem] leading-[1.15] font-medium md:text-[2.6rem]"
+            >
+              Tradição de 1920,
+              <br />
+              <span className="text-gold-sheen italic">tecnologia de hoje</span>
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-white/75">
+            <p className="mt-5 text-lg leading-relaxed text-white/70">
               Muitos atos já podem ser resolvidos sem sair de casa, pelas
-              plataformas oficiais do notariado e do protesto brasileiros — com
+              plataformas oficiais do notariado e do protesto brasileiros, com
               a mesma validade jurídica.
             </p>
           </div>
@@ -48,16 +57,16 @@ export function DigitalCta() {
                 rel="noopener noreferrer"
                 data-reveal
                 style={{ "--reveal-delay": `${i * 100}ms` } as React.CSSProperties}
-                className="group flex flex-col rounded-2xl border border-white/12 bg-white/[0.05] p-6 transition-colors hover:border-gold-400/50 hover:bg-white/[0.09]"
+                className="glass group flex flex-col rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/50 hover:bg-white/[0.09]"
               >
-                <span className="w-fit rounded-xl bg-gold-400/15 p-2.5 text-gold-400">
+                <span className="w-fit rounded-2xl bg-gold-400/15 p-3 text-gold-300">
                   <Icon name={channel.icon} className="h-6 w-6" />
                 </span>
-                <h3 className="mt-4 text-lg font-semibold">{channel.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                <h3 className="mt-5 text-lg font-semibold">{channel.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/65">
                   {channel.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-gold-400">
+                <span className="mt-5 inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-gold-300">
                   {channel.cta}
                   <Icon
                     name="external"

@@ -14,14 +14,14 @@ const hubs = {
   notas: {
     services: notasServices,
     eyebrow: "Tabelionato de Notas",
-    lede: "Escrituras, procurações, testamentos, atas notariais, reconhecimento de firma, autenticações e certidões — atos com fé pública para proteger seus negócios e sua família.",
+    lede: "Escrituras, procurações, testamentos, atas notariais, reconhecimento de firma, autenticações e certidões - atos com fé pública para proteger seus negócios e sua família.",
     description:
       "Serviços de notas em Potirendaba/SP: escrituras públicas, procurações, testamentos, atas notariais, reconhecimento de firma, autenticação de cópias e certidões.",
   },
   protesto: {
     services: protestoServices,
     eyebrow: "Tabelionato de Protesto",
-    lede: "O caminho legal mais eficiente para recuperar créditos — e o mais seguro para consultar, pagar e cancelar protestos.",
+    lede: "O caminho legal mais eficiente para recuperar créditos - e o mais seguro para consultar, pagar e cancelar protestos.",
     description:
       "Serviços de protesto em Potirendaba/SP: protesto de títulos, consulta de protestos, emissão de boletos para pagamento e cancelamento de protesto.",
   },

@@ -6,11 +6,11 @@ type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-navy-700 text-white hover:bg-navy-600 active:bg-navy-800 shadow-sm",
+    "bg-action text-white hover:bg-action-hover active:bg-action-active shadow-sm",
   secondary:
-    "border border-line bg-surface-0 text-navy-800 hover:border-navy-600 hover:text-navy-600",
-  ghost: "text-navy-700 hover:bg-surface-2",
-  gold: "bg-gold-500 text-navy-950 hover:bg-gold-400 shadow-sm font-semibold",
+    "border border-line bg-surface-0 text-heading-soft hover:border-azure-500 hover:text-link-hover",
+  ghost: "text-link hover:bg-surface-2",
+  gold: "bg-gold-400 text-navy-950 hover:bg-gold-300 font-semibold shadow-[0_6px_24px_rgba(207,169,94,0.35)]",
 };
 
 const sizes: Record<Size, string> = {
@@ -42,7 +42,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-lg font-medium transition-colors duration-200",
+    "inline-flex items-center justify-center rounded-full font-medium transition-all duration-200",
     variants[variant],
     sizes[size],
     className,

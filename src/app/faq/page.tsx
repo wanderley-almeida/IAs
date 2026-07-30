@@ -21,7 +21,7 @@ export default function FaqPage() {
         crumbs={[{ label: "Perguntas frequentes", href: "/faq" }]}
         eyebrow="Ajuda"
         title="Perguntas frequentes"
-        lede="Respostas diretas, em linguagem simples. Não encontrou a sua dúvida? Fale com a equipe — teremos prazer em orientar."
+        lede="Respostas diretas, em linguagem simples. Não encontrou a sua dúvida? Fale com a equipe - teremos prazer em orientar."
       />
 
       <div className="bg-surface-0">
@@ -39,7 +39,7 @@ export default function FaqPage() {
                 <li key={cat.id}>
                   <a
                     href={`#${cat.id}`}
-                    className="inline-block rounded-lg border border-line px-3.5 py-2 text-sm text-ink-700 transition-colors hover:border-navy-600 hover:text-navy-700 lg:border-0 lg:px-3"
+                    className="inline-block rounded-lg border border-line px-3.5 py-2 text-sm text-ink-700 transition-colors hover:border-azure-500 hover:text-link lg:border-0 lg:px-3"
                   >
                     {cat.label}
                   </a>
@@ -60,7 +60,7 @@ export default function FaqPage() {
                 <h2
                   id={`faq-${cat.id}`}
                   data-reveal
-                  className="font-display text-2xl font-medium text-navy-900"
+                  className="font-display text-2xl font-medium text-heading"
                 >
                   {cat.label}
                 </h2>

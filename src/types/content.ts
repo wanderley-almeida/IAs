@@ -51,16 +51,6 @@ export interface FaqCategory {
   items: ServiceFaq[];
 }
 
-export interface NewsArticle {
-  slug: string;
-  title: string;
-  excerpt: string;
-  /** ISO date (YYYY-MM-DD). */
-  date: string;
-  category: string;
-  body: string[];
-}
-
 export interface TeamMember {
   name: string;
   role: string;

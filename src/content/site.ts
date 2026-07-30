@@ -3,7 +3,7 @@ import { PENDING } from "@/types/content";
 /**
  * Fonte única de verdade dos dados institucionais.
  *
- * ⚠️ Dados coletados de diretórios públicos em jul/2026 — confirmar com o
+ * ⚠️ Dados coletados de diretórios públicos em jul/2026 - confirmar com o
  * cartório antes da publicação (ver docs/01-pesquisa-e-benchmark.md, seção 4).
  * Campos com `PENDING` são exibidos como "Pendente de preenchimento" no site.
  */
@@ -22,7 +22,7 @@ export const site = {
     city: "Potirendaba",
     state: "SP",
     zip: "15105-000",
-    full: "Rua Tiradentes, 1169 — Centro, Potirendaba/SP, CEP 15105-000",
+    full: "Rua Tiradentes, 1169 - Centro, Potirendaba/SP, CEP 15105-000",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Rua+Tiradentes+1169+Potirendaba+SP",
     mapsEmbedUrl:
@@ -50,7 +50,7 @@ export const site = {
     role: "Substituto",
   },
 
-  /** URL de produção — ajustar quando o domínio for contratado. */
+  /** URL de produção - ajustar quando o domínio for contratado. */
   url: "https://cartoriopotirendaba.com.br",
 
   external: {

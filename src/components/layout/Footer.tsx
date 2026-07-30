@@ -7,7 +7,6 @@ import { Logo } from "./Logo";
 const institucionalLinks = [
   ...aboutNav.links,
   { label: "Perguntas frequentes", href: "/faq" },
-  { label: "Notícias", href: "/noticias" },
   { label: "Política de Privacidade", href: "/privacidade" },
   { label: "LGPD", href: "/lgpd" },
   { label: "Contato", href: "/contato" },
@@ -15,8 +14,9 @@ const institucionalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy-950 text-white/80">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <footer className="aurora grain relative text-white/80">
+      <span className="hairline-gold absolute inset-x-0 top-0" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Institucional */}
           <div>
@@ -108,7 +108,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
                 >
-                  CENPROT — Consulta de protestos
+                  CENPROT - Consulta de protestos
                   <Icon name="external" className="h-3.5 w-3.5" />
                 </a>
               </li>
@@ -143,7 +143,7 @@ export function Footer() {
           </p>
           <p className="mt-1.5">
             © {new Date().getFullYear()} {site.shortName}. Conteúdo meramente
-            informativo — não substitui orientação presencial. Emolumentos
+            informativo - não substitui orientação presencial. Emolumentos
             conforme tabela oficial do Tribunal de Justiça de São Paulo.
           </p>
         </div>

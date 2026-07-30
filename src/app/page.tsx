@@ -4,7 +4,7 @@ import { Pillars } from "@/components/sections/home/Pillars";
 import { NeedsGrid } from "@/components/sections/home/NeedsGrid";
 import { HowItWorks } from "@/components/sections/home/HowItWorks";
 import { DigitalCta } from "@/components/sections/home/DigitalCta";
-import { Previews } from "@/components/sections/home/Previews";
+import { FaqSecurity } from "@/components/sections/home/FaqSecurity";
 import { ContactStrip } from "@/components/sections/ContactStrip";
 
 export default function HomePage() {
@@ -16,7 +16,7 @@ export default function HomePage() {
       <NeedsGrid />
       <HowItWorks />
       <DigitalCta />
-      <Previews />
+      <FaqSecurity />
       <ContactStrip />
     </>
   );

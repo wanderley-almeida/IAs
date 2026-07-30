@@ -2,7 +2,7 @@
 
 import { Icon } from "@/components/ui/Icon";
 
-/** Barra de busca do hero — abre o SearchDialog global via evento. */
+/** Barra de busca do hero - abre o SearchDialog global via evento. */
 export function HeroSearchTrigger() {
   return (
     <button

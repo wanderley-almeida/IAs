@@ -44,7 +44,7 @@ const timeline = [
     year: "2007",
     title: "Atos da vida civil no cartório",
     description:
-      "A Lei nº 11.441/2007 autoriza divórcios, inventários e partilhas consensuais por escritura pública — mais rapidez e menos custo para as famílias.",
+      "A Lei nº 11.441/2007 autoriza divórcios, inventários e partilhas consensuais por escritura pública - mais rapidez e menos custo para as famílias.",
   },
   {
     year: "2020",
@@ -56,7 +56,7 @@ const timeline = [
     year: "Hoje",
     title: "Tradição e inovação",
     description:
-      "Mais de um século depois, seguimos com o mesmo propósito: segurança jurídica com atendimento próximo — no balcão e na tela.",
+      "Mais de um século depois, seguimos com o mesmo propósito: segurança jurídica com atendimento próximo - no balcão e na tela.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function HistoriaPage() {
         ]}
         eyebrow="Nossa história"
         title={`Mais de um século de fé pública`}
-        lede={`Desde ${site.foundedYear}, a serventia acompanha a vida de Potirendaba — registrando negócios, protegendo famílias e dando eficácia ao crédito.`}
+        lede={`Desde ${site.foundedYear}, a serventia acompanha a vida de Potirendaba - registrando negócios, protegendo famílias e dando eficácia ao crédito.`}
       />
 
       <section className="bg-surface-0">
@@ -85,7 +85,7 @@ export default function HistoriaPage() {
                 <p className="font-display text-2xl font-medium text-gold-500">
                   {item.year}
                 </p>
-                <h2 className="mt-1.5 text-lg font-semibold text-navy-900">
+                <h2 className="mt-1.5 text-lg font-semibold text-heading">
                   {item.title}
                 </h2>
                 <p className="mt-2 leading-relaxed text-ink-700">

@@ -53,15 +53,15 @@ export default function TabeliaPage() {
             </h2>
             <dl className="mt-4 space-y-4 text-sm">
               <div>
-                <dt className="font-medium text-navy-900">Denominação</dt>
+                <dt className="font-medium text-heading">Denominação</dt>
                 <dd className="mt-0.5 text-ink-700">{site.legalName}</dd>
               </div>
               <div>
-                <dt className="font-medium text-navy-900">CNS</dt>
+                <dt className="font-medium text-heading">CNS</dt>
                 <dd className="mt-0.5 text-ink-700">{site.cns}</dd>
               </div>
               <div>
-                <dt className="font-medium text-navy-900">Substituto</dt>
+                <dt className="font-medium text-heading">Substituto</dt>
                 <dd className="mt-0.5 text-ink-700">{site.substitute.name}</dd>
               </div>
               <div className="flex items-start gap-2.5 border-t border-line pt-4">

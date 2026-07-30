@@ -2,10 +2,10 @@ import type { Service } from "@/types/content";
 import { site } from "./site";
 
 /**
- * Catálogo de serviços — fonte única para menus, cards, páginas de detalhe,
+ * Catálogo de serviços - fonte única para menus, cards, páginas de detalhe,
  * busca interna e sitemap. Conteúdo orientado a tarefas (docs/02).
  *
- * Nota jurídica: valores de emolumentos não são publicados aqui de propósito —
+ * Nota jurídica: valores de emolumentos não são publicados aqui de propósito -
  * mudam anualmente por lei estadual. Cada serviço aponta para a tabela oficial.
  */
 
@@ -94,10 +94,10 @@ export const services: Service[] = [
       },
     ],
     deadline:
-      "A lavratura é agendada conforme a complexidade do ato e a entrega da documentação completa — em geral, poucos dias úteis.",
+      "A lavratura é agendada conforme a complexidade do ato e a entrega da documentação completa - em geral, poucos dias úteis.",
     costNote: costNoteDefault,
     legalBasis: [
-      "Código Civil, arts. 104–109 e 215",
+      "Código Civil, arts. 104 a 109 e 215",
       "Lei nº 8.935/1994 (Lei dos Cartórios)",
       "Lei nº 11.441/2007 (divórcio e inventário extrajudiciais)",
       "Resolução CNJ nº 35/2007",
@@ -159,7 +159,7 @@ export const services: Service[] = [
       {
         group: "Do outorgante (quem concede os poderes)",
         items: [
-          "Documento de identidade oficial com foto (RG ou CNH) e CPF — original",
+          "Documento de identidade oficial com foto (RG ou CNH) e CPF - original",
           "Certidão de casamento (quando o estado civil for relevante ao ato)",
           "Comprovante de endereço",
         ],
@@ -182,7 +182,7 @@ export const services: Service[] = [
       {
         title: "Informe a finalidade",
         description:
-          "Diga ao cartório para que a procuração será usada. Os poderes são redigidos sob medida — nem mais amplos, nem mais restritos do que você precisa.",
+          "Diga ao cartório para que a procuração será usada. Os poderes são redigidos sob medida - nem mais amplos, nem mais restritos do que você precisa.",
       },
       {
         title: "Compareça com seus documentos",
@@ -198,12 +198,12 @@ export const services: Service[] = [
     deadline:
       "Procurações simples costumam ser lavradas no mesmo dia, por ordem de chegada ou agendamento.",
     costNote: costNoteDefault,
-    legalBasis: ["Código Civil, arts. 653–692", "Lei nº 8.935/1994"],
+    legalBasis: ["Código Civil, arts. 653 a 692", "Lei nº 8.935/1994"],
     faqs: [
       {
         question: "Procuração pública tem prazo de validade?",
         answer:
-          "Por padrão, não — vale até ser revogada, até o falecimento do outorgante ou até cumprir sua finalidade. É possível, porém, fixar prazo de validade no próprio texto do ato.",
+          "Por padrão, não - vale até ser revogada, até o falecimento do outorgante ou até cumprir sua finalidade. É possível, porém, fixar prazo de validade no próprio texto do ato.",
       },
       {
         question: "Como cancelo uma procuração que fiz?",
@@ -255,7 +255,7 @@ export const services: Service[] = [
       {
         group: "Do testador",
         items: [
-          "Documento de identidade oficial com foto e CPF — original",
+          "Documento de identidade oficial com foto e CPF - original",
           "Certidão de casamento ou nascimento",
           "Relação dos bens (descrição básica; não é necessário apresentar todos os títulos)",
           "Dados completos dos beneficiários (nome, CPF quando possível, parentesco)",
@@ -288,7 +288,7 @@ export const services: Service[] = [
     deadline:
       "Agendamento prévio recomendado. O ato costuma ser concluído em uma única sessão.",
     costNote: costNoteDefault,
-    legalBasis: ["Código Civil, arts. 1.857–1.880 e 1.864–1.867"],
+    legalBasis: ["Código Civil, arts. 1.857 a 1.880 e 1.864 a 1.867"],
     faqs: [
       {
         question: "Posso mudar meu testamento depois?",
@@ -298,7 +298,7 @@ export const services: Service[] = [
       {
         question: "Alguém fica sabendo do conteúdo?",
         answer:
-          "Não. O testamento fica arquivado sob sigilo no cartório e é comunicado ao registro central apenas a existência do ato — não o conteúdo. Ele só se torna acessível após o falecimento.",
+          "Não. O testamento fica arquivado sob sigilo no cartório e é comunicado ao registro central apenas a existência do ato - não o conteúdo. Ele só se torna acessível após o falecimento.",
       },
       {
         question: "Preciso deixar tudo para os meus filhos?",
@@ -326,7 +326,7 @@ export const services: Service[] = [
       "prova digital",
     ],
     whatIs: [
-      "A ata notarial é o instrumento pelo qual o tabelião narra, com fé pública, fatos que verificou pessoalmente — transformando-os em prova documental robusta, expressamente admitida pelo art. 384 do Código de Processo Civil.",
+      "A ata notarial é o instrumento pelo qual o tabelião narra, com fé pública, fatos que verificou pessoalmente - transformando-os em prova documental robusta, expressamente admitida pelo art. 384 do Código de Processo Civil.",
       "É cada vez mais usada para preservar provas digitais (conversas de WhatsApp, publicações em redes sociais, conteúdo de sites) antes que sejam apagadas.",
     ],
     useCases: [
@@ -350,7 +350,7 @@ export const services: Service[] = [
       {
         title: "Descreva o fato",
         description:
-          "Explique ao cartório o que precisa ser constatado e com qual finalidade — isso orienta o formato e o alcance da ata.",
+          "Explique ao cartório o que precisa ser constatado e com qual finalidade - isso orienta o formato e o alcance da ata.",
       },
       {
         title: "Verificação pelo tabelião",
@@ -375,7 +375,7 @@ export const services: Service[] = [
       {
         question: "Print de conversa não basta como prova?",
         answer:
-          "Capturas de tela podem ser contestadas por serem facilmente editáveis. A ata notarial atesta que o conteúdo existia naquele aparelho ou endereço naquele momento, com fé pública — um peso probatório muito superior.",
+          "Capturas de tela podem ser contestadas por serem facilmente editáveis. A ata notarial atesta que o conteúdo existia naquele aparelho ou endereço naquele momento, com fé pública - um peso probatório muito superior.",
       },
       {
         question: "O tabelião pode ir até o local do fato?",
@@ -405,7 +405,7 @@ export const services: Service[] = [
     popular: true,
     whatIs: [
       "Reconhecer firma é o ato pelo qual o tabelião atesta que a assinatura em um documento pertence a determinada pessoa, conferindo-a com o padrão arquivado no cartão de firma.",
-      "Há duas modalidades: por semelhança (comparação com o padrão arquivado) e por autenticidade (assinatura feita na presença do tabelião — exigida, por exemplo, na transferência de veículos).",
+      "Há duas modalidades: por semelhança (comparação com o padrão arquivado) e por autenticidade (assinatura feita na presença do tabelião - exigida, por exemplo, na transferência de veículos).",
     ],
     useCases: [
       "Contratos particulares (locação, compra e venda de veículos)",
@@ -418,7 +418,7 @@ export const services: Service[] = [
       {
         group: "Para abrir firma (primeira vez)",
         items: [
-          "Documento de identidade oficial com foto — original (RG, CNH ou passaporte) e CPF",
+          "Documento de identidade oficial com foto - original (RG, CNH ou passaporte) e CPF",
           "Comparecimento pessoal para preencher o cartão de assinatura",
         ],
       },
@@ -453,12 +453,12 @@ export const services: Service[] = [
       {
         question: "Qual a diferença entre semelhança e autenticidade?",
         answer:
-          "Na semelhança, o escrevente compara a assinatura do documento com o padrão arquivado — você não precisa estar presente. Na autenticidade, você assina o documento na frente do escrevente, com documento de identidade original — modalidade exigida em atos como a transferência de veículos.",
+          "Na semelhança, o escrevente compara a assinatura do documento com o padrão arquivado - você não precisa estar presente. Na autenticidade, você assina o documento na frente do escrevente, com documento de identidade original - modalidade exigida em atos como a transferência de veículos.",
       },
       {
         question: "Minha firma aberta em outro cartório vale aqui?",
         answer:
-          "Não. O cartão de firma é arquivo próprio de cada serventia. Para reconhecimento por semelhança neste cartório, é preciso abrir firma aqui — o procedimento leva poucos minutos.",
+          "Não. O cartão de firma é arquivo próprio de cada serventia. Para reconhecimento por semelhança neste cartório, é preciso abrir firma aqui - o procedimento leva poucos minutos.",
       },
     ],
     relatedSlugs: ["autenticacao", "procuracoes", "certidoes"],
@@ -491,7 +491,7 @@ export const services: Service[] = [
       {
         group: "Necessário",
         items: [
-          "Documento original (físico) a ser copiado — não se autentica cópia de cópia simples nem documento plastificado ilegível ou com rasuras",
+          "Documento original (físico) a ser copiado - não se autentica cópia de cópia simples nem documento plastificado ilegível ou com rasuras",
         ],
       },
     ],
@@ -516,7 +516,7 @@ export const services: Service[] = [
       {
         question: "Documento digital pode ser autenticado?",
         answer:
-          "Documentos natos digitais com assinatura eletrônica válida têm verificação própria online. Já a materialização de documento eletrônico (imprimir com valor de original) é feita conforme as normas vigentes — consulte o cartório sobre o seu caso.",
+          "Documentos natos digitais com assinatura eletrônica válida têm verificação própria online. Já a materialização de documento eletrônico (imprimir com valor de original) é feita conforme as normas vigentes - consulte o cartório sobre o seu caso.",
       },
     ],
     relatedSlugs: ["reconhecimento-de-firma", "certidoes"],
@@ -572,19 +572,19 @@ export const services: Service[] = [
       },
     ],
     deadline:
-      "Em regra, até 5 dias úteis — certidões simples costumam sair no mesmo dia.",
+      "Em regra, até 5 dias úteis - certidões simples costumam sair no mesmo dia.",
     costNote: costNoteDefault,
     legalBasis: ["Lei nº 8.935/1994, arts. 6º e 7º", "Lei nº 6.015/1973"],
     faqs: [
       {
         question: "Qualquer pessoa pode pedir certidão de um ato?",
         answer:
-          "As certidões notariais são, em regra, acessíveis a quem demonstre interesse — com exceções legais, como o testamento, que permanece sigiloso enquanto o testador estiver vivo.",
+          "As certidões notariais são, em regra, acessíveis a quem demonstre interesse - com exceções legais, como o testamento, que permanece sigiloso enquanto o testador estiver vivo.",
       },
       {
         question: "O ato foi feito em outro cartório. Vocês emitem a certidão?",
         answer:
-          "A certidão é emitida pela serventia que lavrou o ato. Podemos orientar você a localizar o cartório correto — a plataforma CENSEC ajuda a encontrar escrituras, procurações e testamentos em todo o país.",
+          "A certidão é emitida pela serventia que lavrou o ato. Podemos orientar você a localizar o cartório correto - a plataforma CENSEC ajuda a encontrar escrituras, procurações e testamentos em todo o país.",
       },
     ],
     relatedSlugs: ["escrituras", "procuracoes", "testamentos"],
@@ -675,7 +675,7 @@ export const services: Service[] = [
       "cancelamento-de-protesto",
     ],
     digital: {
-      label: "CENPROT — Central Nacional de Protesto",
+      label: "CENPROT - Central Nacional de Protesto",
       url: site.external.cenprot,
       description:
         "Credores podem apresentar títulos eletronicamente e acompanhar protestos pela central oficial dos cartórios de protesto do Brasil.",
@@ -735,18 +735,18 @@ export const services: Service[] = [
     deadline:
       "O boleto respeita o prazo legal da intimação (3 dias úteis). Após o protesto, o pagamento continua possível, seguido do procedimento de cancelamento.",
     costNote:
-      "O valor do boleto inclui o título e os emolumentos legais devidos. Confira sempre os dados do beneficiário — boletos legítimos são emitidos pelo próprio cartório.",
+      "O valor do boleto inclui o título e os emolumentos legais devidos. Confira sempre os dados do beneficiário - boletos legítimos são emitidos pelo próprio cartório.",
     legalBasis: ["Lei nº 9.492/1997, arts. 12 e 19"],
     faqs: [
       {
         question: "Recebi um boleto por e-mail. Como sei que não é golpe?",
         answer:
-          "Confirme sempre pelo telefone oficial do cartório — (17) 3249-1499 — antes de pagar. Verifique se o beneficiário do boleto é a serventia e desconfie de descontos generosos ou pressa excessiva: golpes de falso boleto de cartório são comuns.",
+          "Confirme sempre pelo telefone oficial do cartório - (17) 3249-1499 - antes de pagar. Verifique se o beneficiário do boleto é a serventia e desconfie de descontos generosos ou pressa excessiva: golpes de falso boleto de cartório são comuns.",
       },
       {
         question: "Paguei o boleto. Meu nome já está limpo?",
         answer:
-          "Se o pagamento ocorreu dentro do prazo da intimação, o protesto não chega a ser lavrado. Se o título já estava protestado, após a quitação é preciso solicitar o cancelamento do protesto — veja o serviço correspondente.",
+          "Se o pagamento ocorreu dentro do prazo da intimação, o protesto não chega a ser lavrado. Se o título já estava protestado, após a quitação é preciso solicitar o cancelamento do protesto - veja o serviço correspondente.",
       },
     ],
     relatedSlugs: [
@@ -773,8 +773,8 @@ export const services: Service[] = [
     ],
     popular: true,
     whatIs: [
-      "Qualquer pessoa pode consultar a existência de protestos em um CPF ou CNPJ — a consulta simples é gratuita pela CENPROT, central nacional oficial dos cartórios de protesto.",
-      "Para fins oficiais (licitações, financiamentos, cadastros), emite-se a certidão de protesto — negativa, quando nada consta, ou positiva, detalhando os protestos existentes no período pesquisado (em regra, 5 anos).",
+      "Qualquer pessoa pode consultar a existência de protestos em um CPF ou CNPJ - a consulta simples é gratuita pela CENPROT, central nacional oficial dos cartórios de protesto.",
+      "Para fins oficiais (licitações, financiamentos, cadastros), emite-se a certidão de protesto - negativa, quando nada consta, ou positiva, detalhando os protestos existentes no período pesquisado (em regra, 5 anos).",
     ],
     useCases: [
       "Verificar se seu nome ou empresa possui protestos",
@@ -808,15 +808,15 @@ export const services: Service[] = [
           "A certidão é emitida no prazo legal e entregue no balcão ou por meio eletrônico.",
       },
     ],
-    deadline: "Certidões da comarca são emitidas em até 5 dias úteis — em geral, no mesmo dia.",
+    deadline: "Certidões da comarca são emitidas em até 5 dias úteis - em geral, no mesmo dia.",
     costNote:
       "A consulta simples pela CENPROT é gratuita. Certidões oficiais têm emolumentos conforme a tabela vigente.",
-    legalBasis: ["Lei nº 9.492/1997, arts. 27–31"],
+    legalBasis: ["Lei nº 9.492/1997, arts. 27 a 31"],
     faqs: [
       {
         question: "Descobri um protesto no meu nome. O que faço?",
         answer:
-          "Solicite a certidão detalhada para identificar o credor e o título. Quite a dívida diretamente com o credor (ou pelo cartório, quando cabível), obtenha a carta de anuência e peça o cancelamento — veja o serviço Cancelamento de Protesto.",
+          "Solicite a certidão detalhada para identificar o credor e o título. Quite a dívida diretamente com o credor (ou pelo cartório, quando cabível), obtenha a carta de anuência e peça o cancelamento - veja o serviço Cancelamento de Protesto.",
       },
       {
         question: "A certidão negativa vale para todo o Brasil?",
@@ -830,7 +830,7 @@ export const services: Service[] = [
       "protesto-de-titulos",
     ],
     digital: {
-      label: "CENPROT — consulta gratuita",
+      label: "CENPROT - consulta gratuita",
       url: site.external.cenprot,
       description:
         "Consulta nacional gratuita de protestos por CPF/CNPJ, direto na central oficial dos cartórios.",
@@ -878,7 +878,7 @@ export const services: Service[] = [
       {
         title: "Obtenha a anuência do credor",
         description:
-          "Ao quitar a dívida, peça ao credor a carta de anuência com firma reconhecida — ou a anuência eletrônica pela CENPROT, ainda mais prática.",
+          "Ao quitar a dívida, peça ao credor a carta de anuência com firma reconhecida - ou a anuência eletrônica pela CENPROT, ainda mais prática.",
       },
       {
         title: "Protocole o pedido",
@@ -899,7 +899,7 @@ export const services: Service[] = [
       {
         question: "Paguei a dívida há anos e o protesto ainda aparece. É normal?",
         answer:
-          "Sim — o protesto permanece até que o cancelamento seja formalmente requerido. Obtenha a carta de anuência do credor (ou o título quitado) e protocole o pedido; a baixa sai em poucos dias.",
+          "Sim - o protesto permanece até que o cancelamento seja formalmente requerido. Obtenha a carta de anuência do credor (ou o título quitado) e protocole o pedido; a baixa sai em poucos dias.",
       },
       {
         question: "O credor sumiu e não consigo a anuência. E agora?",
@@ -913,7 +913,7 @@ export const services: Service[] = [
       "protesto-de-titulos",
     ],
     digital: {
-      label: "Anuência eletrônica — CENPROT",
+      label: "Anuência eletrônica - CENPROT",
       url: site.external.cenprot,
       description:
         "Credores podem conceder anuência eletrônica pela central nacional, dispensando a carta física.",

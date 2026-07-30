@@ -15,7 +15,7 @@ export function MapEmbed() {
     return (
       <iframe
         src={site.address.mapsEmbedUrl}
-        title={`Mapa — ${site.address.full}`}
+        title={`Mapa - ${site.address.full}`}
         loading="lazy"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
@@ -29,7 +29,7 @@ export function MapEmbed() {
       {/* Grade decorativa de fundo sugerindo um mapa */}
       <svg
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full text-navy-700/10"
+        className="absolute inset-0 h-full w-full text-link/10"
       >
         <defs>
           <pattern
@@ -49,7 +49,7 @@ export function MapEmbed() {
         <rect width="100%" height="100%" fill="url(#map-grid)" />
       </svg>
 
-      <span className="relative rounded-full bg-navy-700 p-3 text-white shadow-lg">
+      <span className="relative rounded-full bg-action p-3 text-white shadow-lg">
         <Icon name="mapPin" className="h-6 w-6" />
       </span>
       <p className="relative max-w-xs text-center text-sm text-ink-700">
@@ -59,7 +59,7 @@ export function MapEmbed() {
         <button
           type="button"
           onClick={() => setLoaded(true)}
-          className="rounded-lg bg-navy-700 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy-600"
+          className="rounded-lg bg-action px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-action-hover"
         >
           Carregar mapa interativo
         </button>
@@ -67,7 +67,7 @@ export function MapEmbed() {
           href={site.address.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-surface-0 px-4 py-2.5 text-sm font-medium text-navy-800 transition-colors hover:border-navy-600"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-surface-0 px-4 py-2.5 text-sm font-medium text-heading-soft transition-colors hover:border-azure-500"
         >
           Abrir no Google Maps
           <Icon name="external" className="h-4 w-4" />

@@ -43,7 +43,7 @@ export default function ContatoPage() {
         crumbs={[{ label: "Contato", href: "/contato" }]}
         eyebrow="Atendimento"
         title="Fale com o cartório"
-        lede="Tire dúvidas, confirme documentos e valores, ou agende um ato. Preferimos orientar antes — para que sua visita resolva de uma vez."
+        lede="Tire dúvidas, confirme documentos e valores, ou agende um ato. Preferimos orientar antes - para que sua visita resolva de uma vez."
       />
 
       {/* Canais */}
@@ -57,7 +57,7 @@ export default function ContatoPage() {
                 style={{ "--reveal-delay": `${i * 80}ms` } as React.CSSProperties}
                 className="rounded-2xl border border-line bg-surface-0 p-6"
               >
-                <span className="inline-flex rounded-xl bg-navy-700/[0.08] p-2.5 text-navy-700">
+                <span className="inline-flex rounded-xl bg-action/10 p-2.5 text-link">
                   <Icon name={channel.icon} className="h-6 w-6" />
                 </span>
                 <h2 className="mt-4 text-sm font-semibold tracking-wider text-ink-500 uppercase">
@@ -66,12 +66,12 @@ export default function ContatoPage() {
                 {channel.href ? (
                   <a
                     href={channel.href}
-                    className="mt-1 block text-lg font-semibold break-words text-navy-900 transition-colors hover:text-navy-700"
+                    className="mt-1 block text-lg font-semibold break-words text-heading transition-colors hover:text-link"
                   >
                     {channel.value}
                   </a>
                 ) : (
-                  <p className="mt-1 text-lg font-semibold text-navy-900">
+                  <p className="mt-1 text-lg font-semibold text-heading">
                     {channel.value}
                   </p>
                 )}

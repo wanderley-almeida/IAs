@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Conjunto de ícones próprio (SVG outline 24×24, traço 1.5) — sem dependência
+ * Conjunto de ícones próprio (SVG outline 24×24, traço 1.5) - sem dependência
  * externa. Todos decorativos por padrão (aria-hidden); o texto adjacente rotula.
  */
 const paths: Record<string, React.ReactNode> = {
@@ -160,6 +160,22 @@ const paths: Record<string, React.ReactNode> = {
     <>
       <circle cx="8" cy="14" r="4.5" />
       <path d="m11.5 10.5 8-8M17 5l2.5 2.5M14 8l2 2" />
+    </>
+  ),
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2.5V5m0 14v2.5M2.5 12H5m14 0h2.5M4.9 4.9l1.8 1.8m10.6 10.6 1.8 1.8m0-14.2-1.8 1.8M6.7 17.3l-1.8 1.8" />
+    </>
+  ),
+  moon: (
+    <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+  ),
+  accessibility: (
+    <>
+      <circle cx="12" cy="12" r="9.5" />
+      <circle cx="12" cy="7.3" r="1.6" />
+      <path d="M7.5 10.2c3 .9 6 .9 9 0M12 11.5v3m0 0-2 4.3m2-4.3 2 4.3" />
     </>
   ),
 };
