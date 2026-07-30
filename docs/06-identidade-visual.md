@@ -135,11 +135,23 @@ Complemento para fundo transparente: repetir o prompt trocando
 * **Restrições internas:** confirmar com a tabeliã se há elementos obrigatórios/vedados (ex.: uso do brasão da República em papelaria oficial tem regras próprias e não deve integrar o logotipo).
 * **Aprovação:** o logotipo de serventia não exige registro, mas recomenda-se verificação de colidência no INPI antes de investir em papelaria.
 
-## 7. Implantação no site
+## 7. Implantação no site (status: implantado)
 
-O componente `src/components/layout/Logo.tsx` continua com o emblema
-provisório "CP". Quando a arte final do Selo-Flor for gerada e aprovada:
+O cliente gerou a arte por IA (folha com lockups horizontal/vertical,
+emblema e versão monocromática: selo dourado, campo navy, monograma,
+bico de pena, estrela e louros) e a aprovou como direção visual.
 
-1. Exportar SVG otimizado (fundo transparente, cores da paleta).
-2. Substituir o SVG interno de `Logo.tsx` e o `src/app/icon.svg` (favicon).
-3. Nenhum outro arquivo precisa mudar.
+O que foi implantado em `Logo.tsx` e `app/icon.svg` é a **interpretação
+vetorial flat** desse selo: anel duplo dourado com serrilha, campo navy,
+estrela de quatro pontas, monograma "CP" nítido e bico de pena. Ajustes
+técnicos deliberados em relação à arte gerada:
+
+* **Vetor flat em vez de raster 3D metálico:** nitidez em 16 a 512 px,
+  impressão em 1 cor, carimbo e bordado.
+* **Monograma corrigido para "CP":** na arte gerada, lia-se "GD".
+* **Louros omitidos:** clichê jurídico vetado no racional (seção 6 do
+  estudo) e ilegíveis abaixo de 32 px.
+
+Pendências de marca: guardar o PNG original em alta resolução (uso em
+materiais grandes/social) e, quando houver verba, encomendar a
+vetorização profissional definitiva a partir das duas referências.
