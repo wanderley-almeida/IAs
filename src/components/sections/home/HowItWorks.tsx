@@ -60,18 +60,15 @@ export function HowItWorks() {
               key={step.title}
               data-reveal
               style={{ "--reveal-delay": `${i * 100}ms` } as React.CSSProperties}
-              className="card relative overflow-hidden rounded-3xl p-7"
+              className="card rounded-3xl p-8"
             >
               <span
                 aria-hidden="true"
-                className="text-gold-sheen font-display absolute -top-3 right-5 text-[5.5rem] leading-none font-semibold opacity-25"
+                className="font-display inline-flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/45 text-[1.0625rem] font-medium text-gold-500"
               >
                 {i + 1}
               </span>
-              <span className="font-display text-sm font-medium tracking-[0.2em] text-gold-500">
-                PASSO {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-3 text-lg font-semibold text-heading">
+              <h3 className="mt-5 text-lg font-semibold text-heading">
                 {step.title}
               </h3>
               <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-500">
@@ -84,25 +81,23 @@ export function HowItWorks() {
         {/* Faixa de números em painel escuro */}
         <div
           data-reveal
-          className="aurora grain relative mt-14 overflow-hidden rounded-3xl border border-white/10 px-8 py-10 md:px-14 md:py-12"
+          className="aurora grain relative mt-12 overflow-hidden rounded-3xl border border-white/10 px-8 py-10 md:px-14"
         >
-          <dl className="grid gap-10 text-white sm:grid-cols-3">
+          <dl className="grid gap-8 text-white sm:grid-cols-3">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
                 className={
-                  i > 0
-                    ? "sm:border-l sm:border-white/10 sm:pl-10"
-                    : undefined
+                  i > 0 ? "sm:border-l sm:border-white/10 sm:pl-8" : undefined
                 }
               >
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="text-gold-sheen font-display text-5xl font-semibold md:text-6xl">
+                <dd className="font-display text-[2rem] leading-none font-medium text-gold-400 md:text-[2.25rem]">
                   <AnimatedNumber value={stat.value} prefix={stat.prefix} />
                 </dd>
                 <dd
                   aria-hidden="true"
-                  className="mt-2 max-w-[16rem] text-[0.9375rem] leading-snug text-white/70"
+                  className="mt-3 max-w-[15rem] text-[0.9375rem] leading-snug text-white/65"
                 >
                   {stat.label}
                 </dd>

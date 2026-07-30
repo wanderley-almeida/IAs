@@ -84,7 +84,7 @@ export function NeedsGrid() {
               style={{ "--reveal-delay": `${(i % 3) * 80}ms` } as React.CSSProperties}
               className="card card-hover group flex flex-col p-6"
             >
-              <span className="w-fit rounded-xl bg-gold-500/10 p-2.5 text-gold-500">
+              <span className="inline-flex w-fit rounded-xl bg-gold-500/10 p-2.5 text-gold-500">
                 <Icon name={need.icon} className="h-6 w-6" />
               </span>
               <h3 className="mt-4 text-lg leading-snug font-semibold text-heading">

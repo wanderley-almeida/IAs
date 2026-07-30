@@ -39,7 +39,7 @@ export function Hero() {
           <h1
             data-reveal
             style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
-            className="font-display text-[2.75rem] leading-[1.08] font-medium tracking-[-0.01em] md:text-[4rem]"
+            className="font-display text-[2.375rem] leading-[1.14] font-medium tracking-[-0.005em] md:text-[3.25rem]"
           >
             Segurança jurídica com atendimento{" "}
             <span className="text-gold-400">próximo e humano</span>

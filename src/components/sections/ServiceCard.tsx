@@ -18,7 +18,7 @@ export function ServiceCard({
       style={{ "--reveal-delay": `${delay}ms` } as React.CSSProperties}
       className="card card-hover group flex h-full flex-col p-6"
     >
-      <span className="w-fit rounded-2xl bg-action/10 p-2.5 text-link transition-colors group-hover:bg-action group-hover:text-white">
+      <span className="inline-flex w-fit rounded-2xl bg-action/10 p-2.5 text-link transition-colors group-hover:bg-action group-hover:text-white">
         <Icon
           name={serviceIcons[service.slug] ?? "document"}
           className="h-6 w-6"

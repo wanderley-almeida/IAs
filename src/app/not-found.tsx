@@ -12,7 +12,7 @@ export default function NotFound() {
   return (
     <section className="bg-surface-0">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 py-28 text-center sm:px-6">
-        <p className="font-display text-7xl font-medium text-gold-500/50">404</p>
+        <p className="font-display text-5xl font-medium text-gold-500/60">404</p>
         <h1 className="font-display mt-4 text-3xl font-medium text-heading">
           Página não encontrada
         </h1>

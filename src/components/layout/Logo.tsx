@@ -125,7 +125,7 @@ function Emblem({ className }: { className?: string }) {
         x="32"
         y="40.2"
         textAnchor="middle"
-        fontFamily="var(--font-fraunces), Georgia, 'Times New Roman', serif"
+        fontFamily="var(--font-lora), Georgia, 'Times New Roman', serif"
         fontSize="19"
         fontWeight="600"
         fill="#CFA95E"

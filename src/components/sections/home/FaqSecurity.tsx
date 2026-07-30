@@ -50,7 +50,7 @@ export function FaqSecurity() {
         <div aria-labelledby="security-title" data-reveal>
           <div className="card relative overflow-hidden rounded-3xl p-8">
             <span className="hairline-gold absolute inset-x-8 top-0" aria-hidden="true" />
-            <span className="w-fit rounded-2xl bg-danger/10 p-3 text-danger">
+            <span className="inline-flex w-fit rounded-2xl bg-danger/10 p-3 text-danger">
               <Icon name="shield" className="h-7 w-7" />
             </span>
             <h2

@@ -24,7 +24,7 @@ export function PageHero({
               {eyebrow}
             </p>
           )}
-          <h1 className="font-display text-[2.25rem] leading-[1.1] font-medium tracking-[-0.01em] md:text-[3.25rem]">
+          <h1 className="font-display text-[2rem] leading-[1.16] font-medium tracking-[-0.005em] md:text-[2.75rem]">
             {title}
           </h1>
           {lede && (
