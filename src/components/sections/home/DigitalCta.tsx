@@ -39,7 +39,7 @@ export function DigitalCta() {
             >
               Tradição de 1920,
               <br />
-              <span className="text-gold-sheen italic">tecnologia de hoje</span>
+              <span className="text-gold-400">tecnologia de hoje</span>
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-white/70">
               Muitos atos já podem ser resolvidos sem sair de casa, pelas

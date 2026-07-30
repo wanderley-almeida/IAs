@@ -141,17 +141,21 @@ O cliente gerou a arte por IA (folha com lockups horizontal/vertical,
 emblema e versão monocromática: selo dourado, campo navy, monograma,
 bico de pena, estrela e louros) e a aprovou como direção visual.
 
-O que foi implantado em `Logo.tsx` e `app/icon.svg` é a **interpretação
-vetorial flat** desse selo: anel duplo dourado com serrilha, campo navy,
-estrela de quatro pontas, monograma "CP" nítido e bico de pena. Ajustes
-técnicos deliberados em relação à arte gerada:
+O que foi implantado em `Logo.tsx` é a **transcrição vetorial** desse
+selo, fiel à composição aprovada: oval com anel duplo dourado e serrilha,
+campo navy, fleurões nas extremidades, estrela de quatro pontas, ramos de
+louro flanqueando o monograma "CP" e bico de pena na base.
 
-* **Vetor flat em vez de raster 3D metálico:** nitidez em 16 a 512 px,
-  impressão em 1 cor, carimbo e bordado.
-* **Monograma corrigido para "CP":** na arte gerada, lia-se "GD".
-* **Louros omitidos:** clichê jurídico vetado no racional (seção 6 do
-  estudo) e ilegíveis abaixo de 32 px.
+Ajustes técnicos deliberados em relação ao arquivo gerado:
 
-Pendências de marca: guardar o PNG original em alta resolução (uso em
-materiais grandes/social) e, quando houver verba, encomendar a
-vetorização profissional definitiva a partir das duas referências.
+* **Vetor em vez de raster 3D metálico:** nitidez de 16 px a grande
+  formato, impressão em 1 cor, carimbo e bordado. O PNG original perde
+  definição já no tamanho do cabeçalho (48 px).
+* **Monograma corrigido para "CP":** na arte gerada, o entrelaçamento
+  lia-se como "GD".
+* **Favicon simplificado** (`app/icon.svg`): sem louros nem pena, que
+  viram ruído a 16 px; mantém anel, serrilha, estrela e monograma.
+
+Para trocar pelo arquivo de imagem original, ver instruções em
+`public/brand/README.md`. Recomenda-se guardar ali a folha completa
+gerada (lockups e versão monocromática) para papelaria e redes sociais.
