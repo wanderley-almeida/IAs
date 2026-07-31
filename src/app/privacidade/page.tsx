@@ -40,11 +40,23 @@ export default function PrivacidadePage() {
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
                 <strong className="font-semibold text-heading">No site:</strong>{" "}
-                este site institucional não utiliza cookies de rastreamento nem
-                ferramentas de publicidade. Os dados que você informar
-                voluntariamente no formulário de contato (nome, telefone,
-                mensagem) são usados exclusivamente para responder à sua
-                solicitação.
+                este site institucional não utiliza cookies de rastreamento,
+                ferramentas de publicidade nem serviços de analytics. As
+                preferências de tema e de tamanho de texto ficam gravadas
+                apenas no seu próprio navegador e não são enviadas a lugar
+                algum. Os dados que você informar voluntariamente no
+                formulário de contato (nome, telefone, mensagem) são usados
+                exclusivamente para responder à sua solicitação.
+              </li>
+              <li>
+                <strong className="font-semibold text-heading">
+                  Mapa da página de contato:
+                </strong>{" "}
+                o mapa é fornecido pelo Google e só é carregado se você clicar
+                para exibi-lo. Nesse momento, seu navegador se conecta aos
+                servidores do Google, que podem registrar dados de acesso
+                conforme as políticas daquela empresa. Enquanto você não
+                solicitar, nenhuma conexão com o Google é feita.
               </li>
               <li>
                 <strong className="font-semibold text-heading">No atendimento:</strong>{" "}

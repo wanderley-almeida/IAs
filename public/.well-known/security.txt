@@ -1,0 +1,18 @@
+# Política de divulgação de vulnerabilidades (RFC 9116)
+# Cartório de Notas e de Protesto de Potirendaba/SP
+
+Contact: mailto:cartoriopotirendaba@gmail.com
+Preferred-Languages: pt-BR, en
+Canonical: https://cartoriopotirendaba.com.br/.well-known/security.txt
+
+# Prazo de validade deste arquivo. Renovar antes desta data.
+Expires: 2027-07-31T23:59:59.000Z
+
+# Orientações a quem reportar:
+# - Envie os detalhes tecnicos e os passos de reproducao.
+# - Nao acesse, altere ou divulgue dados de terceiros.
+# - Nao execute testes que degradem a disponibilidade do servico.
+# - Aguarde nosso retorno antes de qualquer divulgacao publica.
+#
+# Atos notariais e de protesto NAO sao tratados por este canal.
+# Para servicos do cartorio, use os contatos institucionais do site.
